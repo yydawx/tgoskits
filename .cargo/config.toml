@@ -7,6 +7,9 @@ git-fetch-with-cli = true
 [resolver]
 incompatible-rust-versions = "allow"
 
+[target.riscv64gc-unknown-linux-musl]
+linker = "/home/yyda/.local/riscv64-linux-musl-cross/bin/riscv64-linux-musl-gcc"
+
 [alias]
 arceos = "run -p tg-xtask -- arceos"
 axvisor = "run -p tg-xtask -- axvisor"
