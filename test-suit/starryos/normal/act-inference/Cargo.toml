@@ -1,0 +1,9 @@
+[package]
+name = "act-hello"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tract-onnx = "0.22"
+
+[workspace]

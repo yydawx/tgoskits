@@ -46,8 +46,11 @@ __pycache__/
 .axconfig*
 *.img
 !.claude/skills/*
+.claude/skills/openspec-*/
 /tmp/*
 *.vi
+.claude/commands/
+openspec/
 
 .arceos*
 .starry*
@@ -59,3 +62,25 @@ __pycache__/
 os/StarryOS-REF
 .Ds_Store
 starry-*.log
+
+# onnxruntime cross-compile artifacts
+onnxruntime/build_riscv64/
+ort_install/
+ort_hello
+ort_test.c
+simple_model.onnx
+final_model.pt
+protobuf_riscv64/
+re2_riscv64/
+re2_manual/
+test_ort/
+AKA-Sim2Real/
+riscv64-*-toolchain.cmake
+
+# test binary artifacts (built by cargo xtask)
+test-suit/starryos/normal/*/sh/ort-hello
+test-suit/starryos/normal/*/sh/*.onnx
+test-suit/starryos/normal/*/sh/*.ort
+test-suit/starryos/normal/*/sh/*.bin
+test-suit/starryos/normal/*/sh/act-hello
+test-suit/starryos/normal/*/target/
