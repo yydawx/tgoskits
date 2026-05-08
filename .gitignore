@@ -79,8 +79,15 @@ riscv64-*-toolchain.cmake
 
 # test binary artifacts (built by cargo xtask)
 test-suit/starryos/normal/*/sh/ort-hello
+test-suit/starryos/normal/*/sh/tract-hello
 test-suit/starryos/normal/*/sh/*.onnx
 test-suit/starryos/normal/*/sh/*.ort
 test-suit/starryos/normal/*/sh/*.bin
 test-suit/starryos/normal/*/sh/act-hello
 test-suit/starryos/normal/*/target/
+
+# root-level compiled binaries
+/float-diag
+/minimal-ort-diag
+/ort-conv-test
+/ort-hello
