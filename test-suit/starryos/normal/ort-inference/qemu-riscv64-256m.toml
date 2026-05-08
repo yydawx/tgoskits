@@ -3,7 +3,7 @@ args = [
     "-cpu",
     "rv64",
     "-m",
-    "512M",
+    "256M",
     "-device",
     "virtio-blk-pci,drive=disk0",
     "-drive",

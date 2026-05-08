@@ -67,15 +67,24 @@ starry-*.log
 onnxruntime/build_riscv64/
 ort_install/
 ort_hello
-ort_test.c
 simple_model.onnx
 final_model.pt
 protobuf_riscv64/
 re2_riscv64/
 re2_manual/
-test_ort/
 AKA-Sim2Real/
 riscv64-*-toolchain.cmake
+
+# test_ort build artifacts
+test_ort/build/
+test_ort/conv_models/*.ort
+test_ort/conv_models/*.onnx
+test_ort/conv_models/*.onnx.data
+
+# root conv test model copies
+/conv1x1.ort
+/conv3x3.ort
+/conv_bn.ort
 
 # test binary artifacts (built by cargo xtask)
 test-suit/starryos/normal/*/sh/ort-hello
@@ -83,6 +92,13 @@ test-suit/starryos/normal/*/sh/tract-hello
 test-suit/starryos/normal/*/sh/*.onnx
 test-suit/starryos/normal/*/sh/*.ort
 test-suit/starryos/normal/*/sh/*.bin
+test-suit/starryos/normal/*/sh/float-diag
+test-suit/starryos/normal/*/sh/minimal-ort-diag
+test-suit/starryos/normal/*/sh/ort-conv-test
+test-suit/starryos/normal/*/sh/mmap-test
+
+# built ELF test binaries (root)
+/mmap-test
 test-suit/starryos/normal/*/sh/act-hello
 test-suit/starryos/normal/*/target/
 
