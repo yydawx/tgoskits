@@ -75,6 +75,9 @@ re2_manual/
 AKA-Sim2Real/
 riscv64-*-toolchain.cmake
 
+# third-party source trees
+/onnxruntime/
+
 # test_ort build artifacts
 test_ort/build/
 test_ort/conv_models/*.ort
@@ -96,6 +99,7 @@ test-suit/starryos/normal/*/sh/float-diag
 test-suit/starryos/normal/*/sh/minimal-ort-diag
 test-suit/starryos/normal/*/sh/ort-conv-test
 test-suit/starryos/normal/*/sh/mmap-test
+test-suit/starryos/normal/*/sh/ncnn-hello
 
 # built ELF test binaries (root)
 /mmap-test
@@ -107,3 +111,14 @@ test-suit/starryos/normal/*/target/
 /minimal-ort-diag
 /ort-conv-test
 /ort-hello
+/ncnn-hello
+
+# root-level model files
+/*.onnx
+/*.ort
+
+# test data binary
+test-suit/starryos/normal/*/src/test_inputs.bin
+
+# ncnn model binaries (keep .param text files)
+test-suit/starryos/normal/*/sh/*.ncnn.bin

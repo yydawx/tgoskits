@@ -3,6 +3,9 @@
 #include <string.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "onnxruntime_c_api.h"
 
 static void print_heap(const char* label) {
@@ -60,6 +63,8 @@ int main(int argc, char* argv[]) {
     CHECK_STATUS(g_ort->SetSessionExecutionMode(opts, ORT_SEQUENTIAL));
     CHECK_STATUS(g_ort->DisableMemPattern(opts));
     CHECK_STATUS(g_ort->DisableCpuMemArena(opts));
+    /* zero_copy_for_initializers left OFF: ACT model ops write to input tensors,
+     * causing COW kernel panic or mprotect segfault. Weights copied to heap instead. */
     printf("Session: sequential, mem_pattern=off, cpu_arena=off\n");
 
     OrtSession* session = NULL;
@@ -156,6 +161,7 @@ int main(int argc, char* argv[]) {
     OrtValue* output = NULL;
     print_heap("before inference");
     printf("Running inference...\n");
+    fflush(stdout);
     CHECK_STATUS(g_ort->Run(session, NULL,
         input_names, (const OrtValue* const*)input_tensors, num_inputs,
         output_names, num_outputs, &output));
