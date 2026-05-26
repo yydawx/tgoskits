@@ -122,3 +122,12 @@ test-suit/starryos/normal/*/src/test_inputs.bin
 
 # ncnn model binaries (keep .param text files)
 test-suit/starryos/normal/*/sh/*.ncnn.bin
+
+# external SDK trees (read-only reference)
+/LicheeRV-Nano-Build/
+/u-boot-orangepi5/
+
+# model artifacts (too large for git)
+/act_model.onnx
+/act_model.onnx.data
+/final_model.pt
