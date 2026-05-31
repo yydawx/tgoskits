@@ -131,3 +131,43 @@ test-suit/starryos/normal/*/sh/*.ncnn.bin
 /act_model.onnx
 /act_model.onnx.data
 /final_model.pt
+
+# external SDK trees (read-only reference)
+/sophgo-tpumilr/
+/tpu_sdk/
+
+# build artifact archive
+/archive/
+
+# root-level build artifacts (kept in archive/)
+/*.cvimodel
+/*.mlir
+/*.npz
+/*.onnx
+/*.onnx.data
+/*.prototxt
+/*.layer_group_cache.json
+/*.layer_group_config.json
+/*.ref_files.json
+/*.tensor_info.txt
+/*.cali_table*
+/*.quant_table
+/*_top_f32_all_*.npz
+/*_tpu_addressed_*.npz
+/*_in_f32.npz
+/*_outputs.npz
+/*_weights.npz
+/*_weight_map.csv
+/*.cvi*
+
+# compiled RISC-V binaries (kept in archive/)
+/act_infer_riscv
+/bench_multi
+
+# root-level test output
+/conv*_x86_output.txt
+
+# search/calibration temp
+/Search_Qtable/
+/shape_pattern_qtable
+/act_mix_quant_table
