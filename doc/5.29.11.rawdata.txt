@@ -1,0 +1,1325 @@
+
+   Loading Kernel Image
+   Decompressing 2621760 bytes used 4ms
+   Loading Ramdisk to 87e81000, end 880ea1a0 ... OK
+ERROR: reserving fdt memory region failed (addr=80000000 size=40000 flags=0)
+   Loading Device Tree to 0000000087e77000, end 0000000087e8007f ... OK
+
+Starting kernel ...
+
+0
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-sg2002
+target = riscv64gc-unknown-none-elf
+build_mode =
+log_level = info
+backtrace = false
+smp = 1
+
+Boot at 1970-01-01 00:00:00.058969360 UTC
+
+[  3.134586 0 ax_runtime:203] Logging is enabled.
+[  3.140677 0 ax_runtime:204] Primary CPU 0 started, arg = 0x87e77000.
+[  3.148652 0 ax_runtime:206] Found physcial memory regions:
+[  3.155749 0 ax_runtime:208]   [PA:0x3000000, PA:0x3008000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.166392 0 ax_runtime:208]   [PA:0x3020000, PA:0x3022000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.177055 0 ax_runtime:208]   [PA:0x3060000, PA:0x3064000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.187717 0 ax_runtime:208]   [PA:0x4140000, PA:0x4141000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.198379 0 ax_runtime:208]   [PA:0x4150000, PA:0x4151000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.209042 0 ax_runtime:208]   [PA:0x4160000, PA:0x4161000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.219704 0 ax_runtime:208]   [PA:0x4170000, PA:0x4171000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.230367 0 ax_runtime:208]   [PA:0x4310000, PA:0x4311000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.241029 0 ax_runtime:208]   [PA:0x4340000, PA:0x4341000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.251691 0 ax_runtime:208]   [PA:0x5026000, PA:0x5028000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.262354 0 ax_runtime:208]   [PA:0xc100000, PA:0xc102000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.273016 0 ax_runtime:208]   [PA:0x70000000, PA:0x74000000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.283858 0 ax_runtime:208]   [PA:0x74000000, PA:0x74010000) mmio (READ | WRITE | DEVICE | RESERVED)
+[  3.294700 0 ax_runtime:208]   [PA:0x80200000, PA:0x8042a000) .text (READ | EXECUTE | RESERVED)
+[  3.305004 0 ax_runtime:208]   [PA:0x8042a000, PA:0x80477000) .rodata (READ | RESERVED)
+[  3.314591 0 ax_runtime:208]   [PA:0x80477000, PA:0x80481000) .data .tdata .tbss .percpu (READ | WRITE | RESERVED)
+[  3.326597 0 ax_runtime:208]   [PA:0x80481000, PA:0x804c1000) boot stack (READ | WRITE | RESERVED)
+[  3.337170 0 ax_runtime:208]   [PA:0x804c1000, PA:0x80547000) .bss (READ | WRITE | RESERVED)
+[  3.347205 0 ax_runtime:208]   [PA:0x80547000, PA:0x8fe00000) free memory (READ | WRITE | FREE)
+[  3.357509 0 ax_runtime:360] Initialize global memory allocator...
+[  3.365215 0 ax_runtime:361]   use slab allocator.
+[  3.371705 0 ax_runtime:243] kernel aspace: [VA:0xffffffc000000000, VA:0xfffffffffffff000)
+[  3.381392 0 ax_mm:91] Initialize virtual memory management...
+[  3.401658 0 ax_runtime:255] Initialize platform devices...
+[  3.408602 0 ax_task::api:135] Initialize scheduling...
+[  3.415363 0 ax_task::api:140]   use Round-robin scheduler.
+[  3.422370 0 ax_runtime:273] Initialize interrupt handlers...
+[  3.429632 0 ax_runtime::devices:2] Probe platform devices...
+[  3.570501 0 ax_fs_ng:32] Initialize filesystem subsystem...
+[  3.578253 0 ax_fs_ng::root:117]     partition 1 name=None fs=None lba 2048..133120
+[  3.587617 0 ax_fs_ng::root:117]     partition 2 name=None fs=Some(Ext4) lba 133120..2244608
+[  3.597490 0 ax_fs_ng::root:133]   block device 0 (cvsd) has Mbr partition table with 2 partitions
+[  3.608070 0 ax_fs_ng::root:312]   only one supported filesystem partition is available; using it as root
+[  3.619267 0 ax_fs_ng:59]   selected root device: disk0 partition 2 (<unnamed>, fs=ext4, lba 133120..2244608)
+[  3.652452 0 rsext4::ext4::mount:289] /lost+found exists (path resolution, repaired hint inode=11)
+[  3.671226 0 rsext4::ext4::mount:407] Ext4 filesystem mounted
+[  3.678316 0 rsext4::ext4::mount:408]   - block size: 4096 bytes
+[  3.685846 0 rsext4::ext4::mount:409]   - total blocks: 280576
+[  3.693215 0 rsext4::ext4::mount:410]   - free blocks: 94750
+[  3.700357 0 rsext4::ext4::mount:411]   - total inodes: 73728
+[  3.707619 0 rsext4::ext4::mount:412]   - free inodes: 71634
+[  3.714787 0 rsext4::ext4::sync:13] Syncing filesystem...
+[  3.793101 0 rsext4::ext4::mount:482] Ext4 filesystem mounted
+[  3.800208 0 ax_fs_ng:67]   filesystem type: "ext4"
+[  3.806581 0 ax_net_ng:92] Initialize network subsystem...
+[  3.813710 0 ax_net_ng:144]   No network device found!
+[  3.820173 0 ax_net_ng:149] Device: lo
+[  3.825384 0 ax_runtime:338] Primary CPU 0 init OK.
+[  3.831798 0:2 ktracepoint:282] tracepoint_data_start: 0xffffffc08047f540, tracepoint_data_end: 0xffffffc08047f560
+[  3.843744 0:2 ktracepoint:297] tracepoint_data_len: 2
+[  3.850371 0:2 ktracepoint:314] tracepoint registered: syscalls:sys_enter_openat
+[  3.859333 0:2 ktracepoint:314] tracepoint registered: syscalls:sys_mkdirat
+Initialized 2 tracepoints
+[  3.870673 0:2 starry_kernel::kprobe:435] kprobe selftest failed: hit=false, val=42
+[  3.879814 0:2 starry_kernel::kprobe:455] kretprobe selftest failed: hit=false, val=42
+[  3.889239 0:2 starry_kernel::pseudofs:81] Initialize pseudofs...
+[  3.903920 0:2 starry_kernel::pseudofs:75] Mounted devfs at /dev
+[  3.911365 0:2 starry_kernel::pseudofs:75] Mounted tmpfs at /dev/shm
+[  3.920554 0:2 starry_kernel::pseudofs:75] Mounted tmpfs at /tmp
+[  3.927990 0:2 starry_kernel::dyn_debug:61] debug_init: initializing dynamic debug sites
+[  3.938436 0:2 starry_kernel::dyn_debug:64] debug_init: found 148 dynamic debug sites
+[  3.949082 0:2 starry_kernel::pseudofs:75] Mounted proc at /proc
+[  3.957844 0:2 starry_kernel::pseudofs:75] Mounted sysfs at /sys
+[  3.965394 0:2 starry_kernel::pseudofs:75] Mounted debug at /sys/kernel/debug
+[  3.973993 0:2 starry_kernel::task::timer:328] Initialize alarm...
+[  3.993935 0:7 starry_kernel::task::user:23] Enter user space: ip=0x6015684e, sp=0x3fffffab0
+Welcome to Starry OS!
+[  4.167953 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.179126 0:8 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1d0
+USER=root
+HOSTNAME=starry
+SHLVL=1
+HOME=/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+[  4.219208 0:8 starry_kernel::task::ops:448] Task(8, "busybox") exit with code: 0
+[  4.228321 0:8 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[  4.237928 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.249094 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+
+Use apk to install packages.
+
+[  4.271622 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.282789 0:9 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1d0
+[  4.308016 0:9 starry_kernel::task::ops:448] Task(9, "busybox") exit with code: 256
+[  4.317179 0:9 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[  4.326815 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.337984 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[  4.351078 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.362247 0:10 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1d0
+[  4.515156 0:10 starry_kernel::task::ops:448] Task(10, "busybox") exit with code: 0
+[  4.524321 0:10 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[  4.534022 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.545189 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[  4.558154 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.569413 0:11 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1d0
+[  4.714334 0:11 starry_kernel::task::ops:448] Task(11, "busybox") exit with code: 0
+[  4.723500 0:11 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[  4.733209 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  4.744491 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[  7.922428 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  7.933596 0:12 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1d0
+[  7.954618 0:12 starry_kernel::task::ops:448] Task(12, "busybox") exit with code: 0
+[  7.963803 0:12 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[  7.973500 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[  7.984667 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+root@starry:/root #
+root@starry:/root #
+root@starry:/root # sh /tpu/run_all.sh
+[ 16.714961 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WUNTRACED)
+[ 16.726667 0:13 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff600
+[ 16.752886 0:14 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[ 16.771442 0:14 starry_kernel::task::ops:448] Task(14, "busybox") exit with code: 0
+[ 16.780689 0:14 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[ 16.790529 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[ 16.801784 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_model ===
+[ 16.816422 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[ 16.827761 0:15 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/act_model.cvimodel ===
+[ 17.348525 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[ 17.359749 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[ 17.371660 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[ 17.383259 0:15 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[ 17.533952 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:00:14 bench_multi: version: 1.4.0
+[ 17.544650 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:00:14 bench_multi: act_model_det Build at 2026-05-27 20:45:02 For platform cv181x
+[ 17.565851 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 17.582793 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=7, handle=1, phys_addr=0x80f42000, size=98765968
+[ 17.596611 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80f42000, buffer_size=98765968, requested_length=98766848, map_le8
+[ 17.617037 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x327000, length=98766848
+[ 71.765015 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 71.775275 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=8, handle=2, phys_addr=0x86ecf000, size=959040
+[ 71.788897 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x86ecf000, buffer_size=959040, requested_length=962560, map_length0
+[ 71.804611 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x625b000, length=962560
+[ 71.950531 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:01:08 bench_multi: Max SharedMem size:1205248
+[ 72.029018 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 72.039325 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=5, handle=3, phys_addr=0x86fbd000, size=1205248
+[ 72.053004 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x86fbd000, buffer_size=1205248, requested_length=1208320, map_leng0
+[ 72.069007 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x6346000, length=1208320
+[ 72.091082 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 72.101347 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=9, handle=4, phys_addr=0x870e4000, size=602112
+[ 72.114963 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x870e4000, buffer_size=602112, requested_length=602112, map_length2
+[ 72.130677 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x6158000, length=602112
+[ 72.142340 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 72.152496 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=10, handle=5, phys_addr=0x80ee5000, size=8
+[ 72.165850 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80ee5000, buffer_size=8, requested_length=4096, map_length=4096
+[ 72.180731 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x1000, length=4096
+[ 72.219795 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 72.229963 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=11, handle=6, phys_addr=0x86e1e000, size=64
+[ 72.243403 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x86e1e000, buffer_size=64, requested_length=4096, map_length=4096
+[ 72.258381 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x2000, length=4096
+M0 C0 86.1 -1.1562 0.0513 -0.7070 -0.4492 -0.5312 -0.6211 -0.4531 -0.7148 -0.4727 -0.7070 -0.4590 -0.7070 -0.4629 -0.6797 -0.4473 -0.6523
+M0 C1 86.2 -1.1562 0.0513 -0.7070 -0.4492 -0.5312 -0.6211 -0.4531 -0.7148 -0.4727 -0.7070 -0.4590 -0.7070 -0.4629 -0.6797 -0.4473 -0.6523
+M0 C2 86.1 -1.1562 0.0513 -0.7070 -0.4492 -0.5312 -0.6211 -0.4531 -0.7148 -0.4727 -0.7070 -0.4590 -0.7070 -0.4629 -0.6797 -0.4473 -0.6523
+M0 C3 86.1 -1.1562 0.0513 -0.7070 -0.4492 -0.5312 -0.6211 -0.4531 -0.7148 -0.4727 -0.7070 -0.4590 -0.7070 -0.4629 -0.6797 -0.4473 -0.6523
+M0 C4 86.1 -1.1562 0.0513 -0.7070 -0.4492 -0.5312 -0.6211 -0.4531 -0.7148 -0.4727 -0.7070 -0.4590 -0.7070 -0.4629 -0.6797 -0.4473 -0.6523
+M0 C5 86.1 0.5781 -1.6641 0.0184 -1.1016 -0.1338 -0.9492 -0.4551 -0.6328 -0.5312 -0.5781 -0.5352 -0.5703 -0.3828 -0.7227 -0.2812 -0.7773
+M0 C6 86.2 0.5781 -1.6641 0.0184 -1.1016 -0.1338 -0.9492 -0.4551 -0.6328 -0.5312 -0.5781 -0.5352 -0.5703 -0.3828 -0.7227 -0.2812 -0.7773
+M0 C7 86.1 0.5781 -1.6641 0.0184 -1.1016 -0.1338 -0.9492 -0.4551 -0.6328 -0.5312 -0.5781 -0.5352 -0.5703 -0.3828 -0.7227 -0.2812 -0.7773
+M0 C8 86.1 0.5781 -1.6641 0.0184 -1.1016 -0.1338 -0.9492 -0.4551 -0.6328 -0.5312 -0.5781 -0.5352 -0.5703 -0.3828 -0.7227 -0.2812 -0.7773
+M0 C9 86.1 0.5781 -1.6641 0.0184 -1.1016 -0.1338 -0.9492 -0.4551 -0.6328 -0.5312 -0.5781 -0.5352 -0.5703 -0.3828 -0.7227 -0.2812 -0.7773
+M0 C10 86.2 0.5508 -1.6719 0.0615 -1.1250 -0.1445 -0.9062 -0.4746 -0.5820 -0.5625 -0.5195 -0.5781 -0.4980 -0.4199 -0.6523 -0.3438 -0.6914
+M0 C11 86.1 0.5625 -1.6797 0.0977 -1.1562 -0.1226 -0.9180 -0.4492 -0.5977 -0.5391 -0.5312 -0.5664 -0.4941 -0.4199 -0.6445 -0.3398 -0.6875
+M0 C12 86.1 0.5469 -1.6719 0.0214 -1.0938 -0.1982 -0.8594 -0.5039 -0.5703 -0.5820 -0.5078 -0.5781 -0.4961 -0.4238 -0.6406 -0.3379 -0.6836
+M0 C13 86.1 0.5547 -1.6719 0.0547 -1.1172 -0.1611 -0.8867 -0.4277 -0.6289 -0.5078 -0.5664 -0.5625 -0.5000 -0.4199 -0.6445 -0.3398 -0.6875
+M0 C14 86.1 0.5547 -1.6719 0.0723 -1.1406 -0.1348 -0.9102 -0.4316 -0.6289 -0.5039 -0.5625 -0.5625 -0.5039 -0.4160 -0.6484 -0.3398 -0.6914
+M0 C15 86.2 0.5547 -1.6562 0.0898 -1.1406 -0.1475 -0.8828 -0.4219 -0.6211 -0.5156 -0.5469 -0.5625 -0.4824 -0.4180 -0.6328 -0.3379 -0.6758
+M0 C16 86.1 0.5703 -1.6875 0.0938 -1.1562 -0.1187 -0.9258 -0.4180 -0.6328 -0.5352 -0.5352 -0.5820 -0.4785 -0.4297 -0.6328 -0.3496 -0.6758
+M0 C17 86.1 0.5703 -1.6875 0.1084 -1.1797 -0.1074 -0.9375 -0.4199 -0.6406 -0.5156 -0.5586 -0.5625 -0.5039 -0.4160 -0.6602 -0.3379 -0.6953
+M0 C18 86.2 0.5273 -1.6328 0.0659 -1.1328 -0.1514 -0.8906 -0.4199 -0.6328 -0.5508 -0.5234 -0.5742 -0.4805 -0.4336 -0.6133 -0.3535 -0.6680
+M0 C19 86.1 0.5703 -1.6875 0.0928 -1.1641 -0.1045 -0.9336 -0.3965 -0.6562 -0.5195 -0.5547 -0.5703 -0.4902 -0.4180 -0.6562 -0.3457 -0.6875
+M0 C20 86.1 -0.4395 -0.5312 -0.4629 -0.5234 -0.4707 -0.5039 -0.4863 -0.5117 -0.4922 -0.5195 -0.4766 -0.5078 -0.4434 -0.5039 -0.3809 -0.4766
+M0 C21 86.1 -0.9961 -0.0928 -0.7188 -0.4043 -0.5859 -0.5391 -0.5391 -0.6211 -0.5586 -0.5898 -0.5312 -0.5898 -0.5039 -0.5938 -0.4492 -0.5898
+M0 C22 86.1 1.6250 1.4609 1.5703 1.4453 1.5234 1.4062 1.3906 1.3203 1.0000 1.0391 0.4062 0.4941 0.0879 0.1426 -0.1982 -0.0145
+M0 C23 86.2 -1.8906 0.7734 -0.8984 -0.1523 -0.5391 -0.4824 -0.3848 -0.6758 -0.4082 -0.6484 -0.3984 -0.6445 -0.4180 -0.6250 -0.4023 -0.6055
+M0 C24 86.1 -0.0586 -0.9883 -0.3711 -0.6914 -0.4355 -0.6289 -0.5352 -0.5547 -0.5430 -0.5547 -0.5234 -0.5469 -0.4961 -0.5469 -0.3945 -0.5820
+M0 C25 86.1 -0.7383 -0.3750 -0.6602 -0.4766 -0.5898 -0.5430 -0.5508 -0.5938 -0.5742 -0.5820 -0.5625 -0.5781 -0.5234 -0.5820 -0.4570 -0.5781
+M0 C26 86.2 1.5312 1.5078 1.4766 1.3984 1.4062 1.3516 1.1406 1.1484 0.5273 0.6328 -0.2275 -0.0757 -0.4180 -0.2754 -0.4082 -0.2910
+M0 C27 86.1 1.6172 1.4453 1.5312 1.4062 1.4688 1.3438 1.2578 1.1875 0.7422 0.7773 0.1099 0.1816 -0.2578 -0.1807 -0.3125 -0.1592
+M0 C28 86.1 -0.3301 -0.6953 -0.4492 -0.6133 -0.4648 -0.5859 -0.5156 -0.5586 -0.5352 -0.5547 -0.5195 -0.5430 -0.4746 -0.5586 -0.3848 -0.5820
+M0 C29 86.1 -1.4766 0.5078 -0.7500 -0.1943 -0.5000 -0.4102 -0.4102 -0.5352 -0.4258 -0.5352 -0.4102 -0.5469 -0.3828 -0.5469 -0.3555 -0.5391
+M0 C30 86.1 -0.4375 -0.5195 -0.4629 -0.5234 -0.4668 -0.5117 -0.4824 -0.5234 -0.4961 -0.5273 -0.4785 -0.5117 -0.4414 -0.5078 -0.3809 -0.4805
+M0 C31 86.2 -1.1406 0.0167 -0.7969 -0.3496 -0.6602 -0.5000 -0.5664 -0.5977 -0.5977 -0.5820 -0.5703 -0.5781 -0.5508 -0.5977 -0.5000 -0.5898
+M0 C32 86.1 -0.3086 -0.6094 -0.3867 -0.5508 -0.4043 -0.5195 -0.4492 -0.5000 -0.4688 -0.4961 -0.4492 -0.4824 -0.4102 -0.4824 -0.3379 -0.4609
+M0 C33 86.1 0.0649 -1.0391 -0.2988 -0.6836 -0.3535 -0.6211 -0.4375 -0.5547 -0.4668 -0.5430 -0.4551 -0.5234 -0.4180 -0.5352 -0.3301 -0.5547
+M0 C34 86.1 -0.1973 -0.8828 -0.4551 -0.6406 -0.5195 -0.5781 -0.5977 -0.5312 -0.6055 -0.5273 -0.5820 -0.5195 -0.5312 -0.5508 -0.4336 -0.5938
+M0 C35 86.1 1.6016 1.3672 1.4766 1.3047 1.3828 1.2266 1.1172 1.0156 0.5977 0.5938 -0.0216 0.0020 -0.2949 -0.2852 -0.3066 -0.2656
+M0 C36 86.1 0.6055 -1.7109 0.1709 -1.2344 0.0094 -1.0547 -0.3164 -0.7227 -0.4609 -0.5898 -0.5586 -0.4785 -0.3945 -0.6523 -0.3066 -0.7148
+M0 C37 86.1 -0.4570 -0.5312 -0.4980 -0.5117 -0.5039 -0.4824 -0.5273 -0.4902 -0.5273 -0.5039 -0.5000 -0.5078 -0.4688 -0.5039 -0.4023 -0.4727
+M0 C38 86.1 0.3203 -1.4531 -0.1514 -0.9570 -0.3340 -0.7617 -0.5898 -0.5352 -0.6094 -0.5234 -0.5703 -0.5352 -0.4570 -0.6367 -0.3691 -0.6797
+M0 C39 86.2 -1.8828 0.7578 -0.9531 -0.0947 -0.6016 -0.4316 -0.3672 -0.6875 -0.4336 -0.6250 -0.4551 -0.5977 -0.4727 -0.5742 -0.4766 -0.5469
+M0 C40 86.1 -1.8828 0.7891 -0.9258 -0.0962 -0.5742 -0.4238 -0.3340 -0.6953 -0.3984 -0.6328 -0.4258 -0.5898 -0.4336 -0.5703 -0.4238 -0.5547
+M0 C41 86.1 -1.1406 0.6289 -0.5859 0.0204 -0.3887 -0.1699 -0.4531 -0.2871 -0.4395 -0.3730 -0.4316 -0.3867 -0.3906 -0.3965 -0.3730 -0.3887
+M0 C42 86.1 1.4453 1.5703 1.4766 1.4531 1.4062 1.3984 1.1953 1.2188 0.6133 0.8008 -0.0820 0.1396 -0.4199 -0.2197 -0.4375 -0.2275
+M0 C43 86.1 0.8750 -1.0781 0.2852 -0.5625 -0.0505 -0.5430 -0.3242 -0.4590 -0.4453 -0.4180 -0.5195 -0.4355 -0.4355 -0.5078 -0.2773 -0.6016
+M0 C44 86.2 -1.0156 0.5742 -0.0967 0.2559 0.1689 0.3379 0.1016 0.1904 -0.3477 -0.3516 -0.4160 -0.4141 -0.3574 -0.4609 -0.3281 -0.4570
+M0 C45 86.1 -1.8594 0.7148 -0.9297 -0.1387 -0.5898 -0.4746 -0.4082 -0.6836 -0.4531 -0.6328 -0.4492 -0.6172 -0.4551 -0.6172 -0.4512 -0.5977
+M0 C46 86.1 -0.5508 -0.4746 -0.5391 -0.5117 -0.5117 -0.5352 -0.5039 -0.5586 -0.5156 -0.5625 -0.5000 -0.5508 -0.4668 -0.5469 -0.4121 -0.5156
+M0 C47 86.1 0.6367 -1.7109 0.1611 -1.1875 -0.0786 -0.9258 -0.4414 -0.5781 -0.5117 -0.5195 -0.5391 -0.4863 -0.3887 -0.6562 -0.3184 -0.6875
+M0 C48 86.1 -1.8594 0.7188 -0.9375 -0.1406 -0.5938 -0.4746 -0.4023 -0.6914 -0.4414 -0.6484 -0.4434 -0.6289 -0.4609 -0.6211 -0.4570 -0.5938
+M0 C49 86.2 -0.4688 -0.5273 -0.4980 -0.5352 -0.4961 -0.5234 -0.5078 -0.5352 -0.5234 -0.5312 -0.5117 -0.5234 -0.4746 -0.5195 -0.4141 -0.4941
+M0 C50 86.1 1.3438 1.6328 0.9688 0.9922 0.7461 0.6836 0.1904 0.0342 -0.1279 -0.1904 -0.4180 -0.4004 -0.4082 -0.3477 -0.4746 -0.2070
+M0 C51 86.1 -1.9297 0.7969 -0.9570 -0.1001 -0.5938 -0.4414 -0.3145 -0.7539 -0.4453 -0.6523 -0.4141 -0.6523 -0.4766 -0.5703 -0.4492 -0.5664
+M0 C52 86.1 -0.5078 -0.5781 -0.5039 -0.6055 -0.5078 -0.5898 -0.5312 -0.5820 -0.5430 -0.5859 -0.5312 -0.5781 -0.4941 -0.5859 -0.4395 -0.5742
+M0 C53 86.1 -1.3516 0.2305 -0.7773 -0.3984 -0.5664 -0.6250 -0.4414 -0.7539 -0.4688 -0.7305 -0.4512 -0.7344 -0.4609 -0.7148 -0.4336 -0.6953
+M0 C54 86.2 -1.9375 0.8633 -1.1016 0.1147 -0.6719 -0.3008 -0.2217 -0.8281 -0.4023 -0.6641 -0.4336 -0.5898 -0.5742 -0.4160 -0.5352 -0.4219
+M0 C55 86.1 -1.2344 0.2812 -0.7070 -0.3184 -0.5508 -0.4629 -0.4902 -0.5547 -0.4844 -0.5820 -0.4727 -0.5820 -0.4219 -0.6055 -0.3887 -0.5547
+M0 C56 86.1 -1.9375 0.8320 -1.0234 -0.0231 -0.5977 -0.4258 -0.3047 -0.7578 -0.4121 -0.6680 -0.4219 -0.6367 -0.4688 -0.5742 -0.4395 -0.5820
+M0 C57 86.1 -1.9219 0.8047 -1.0312 -0.0033 -0.6289 -0.4023 -0.3301 -0.7422 -0.4629 -0.6289 -0.4531 -0.6055 -0.5234 -0.5273 -0.4805 -0.5430
+M0 C58 86.1 1.1094 1.6328 0.4980 0.6523 0.0679 0.1660 -0.4707 -0.4238 -0.5156 -0.3301 -0.5664 -0.4219 -0.5234 -0.4102 -0.5273 -0.3320
+M0 C59 86.2 -1.9062 0.7891 -1.0312 -0.0205 -0.6367 -0.4004 -0.3379 -0.7422 -0.4785 -0.6094 -0.4629 -0.5938 -0.5117 -0.5312 -0.4766 -0.5469
+M0 C60 86.1 -0.0393 1.2188 -0.3730 -0.0063 -0.4062 -0.2578 -0.5234 -0.4336 -0.5508 -0.4746 -0.5391 -0.4980 -0.4629 -0.5352 -0.4434 -0.4785
+M0 C61 86.1 0.5586 -1.6328 0.1001 -1.1641 0.0040 -1.0703 -0.2520 -0.8125 -0.3789 -0.6953 -0.4395 -0.6211 -0.3145 -0.7383 -0.2217 -0.8008
+M0 C62 86.1 -1.9531 0.8594 -1.0547 0.0449 -0.6250 -0.3711 -0.2617 -0.7891 -0.4395 -0.6250 -0.4590 -0.5820 -0.5391 -0.4727 -0.5000 -0.5039
+M0 C63 86.1 1.3906 1.6250 1.1484 1.1719 1.0000 0.8047 0.5508 0.3281 -0.0349 -0.0459 -0.4316 -0.3242 -0.4238 -0.2754 -0.4453 -0.1172
+M0 C64 86.2 1.1172 1.6328 0.4004 0.6172 -0.0400 0.1108 -0.5117 -0.3887 -0.5625 -0.2988 -0.5820 -0.3965 -0.5312 -0.3926 -0.5312 -0.3223
+M0 C65 86.1 1.1484 1.6562 0.5664 0.7148 0.1602 0.2490 -0.4141 -0.4102 -0.4590 -0.3457 -0.5703 -0.4199 -0.5117 -0.4238 -0.5391 -0.3184
+M0 C66 86.1 1.4531 1.4922 1.2578 1.2188 1.2031 0.8281 0.9492 0.5430 0.2734 0.0918 -0.2773 -0.3125 -0.3223 -0.3516 -0.3086 -0.2617
+M0 C67 86.1 -1.5859 0.4629 -0.8516 -0.2969 -0.5859 -0.5664 -0.4668 -0.7031 -0.4746 -0.6953 -0.4531 -0.6953 -0.4668 -0.6797 -0.4395 -0.6719
+M0 C68 86.1 -0.4629 -0.6211 -0.4727 -0.6367 -0.4805 -0.6211 -0.5078 -0.6133 -0.5273 -0.6133 -0.5078 -0.6016 -0.4688 -0.6094 -0.4023 -0.6055
+M0 C69 86.2 -1.3516 0.3301 -0.7305 -0.3164 -0.5430 -0.5117 -0.4785 -0.6133 -0.4902 -0.5977 -0.4609 -0.6094 -0.4414 -0.6211 -0.3945 -0.5938
+M0 C70 86.1 -1.9062 0.8125 -0.9102 -0.0942 -0.5469 -0.4414 -0.3613 -0.6562 -0.4199 -0.6094 -0.4082 -0.5938 -0.4141 -0.5898 -0.3867 -0.5625
+M0 C71 86.1 -0.1729 -0.9023 -0.4043 -0.6836 -0.4805 -0.6094 -0.5469 -0.5703 -0.5586 -0.5586 -0.5391 -0.5508 -0.5078 -0.5664 -0.3945 -0.6055
+M0 C72 86.1 0.6484 -1.6875 0.1953 -1.1875 -0.0364 -0.9297 -0.3398 -0.6211 -0.4766 -0.5039 -0.5156 -0.4609 -0.3516 -0.6367 -0.2578 -0.7070
+M0 C73 86.1 0.5977 -1.7109 0.0918 -1.1406 -0.1230 -0.9102 -0.4492 -0.5781 -0.5156 -0.5234 -0.5156 -0.5078 -0.3672 -0.6641 -0.2754 -0.7227
+M0 C74 86.2 0.5742 -1.6562 0.1436 -1.1875 -0.0515 -0.9727 -0.3340 -0.6836 -0.4570 -0.5742 -0.5078 -0.5078 -0.3770 -0.6523 -0.2969 -0.7031
+M0 C75 86.1 0.5117 -1.6328 0.0522 -1.1250 -0.1357 -0.9180 -0.4531 -0.6055 -0.5352 -0.5352 -0.5469 -0.5156 -0.4082 -0.6484 -0.3203 -0.6953
+M0 C76 86.1 -1.8672 0.7617 -0.9062 -0.1309 -0.5469 -0.4629 -0.3125 -0.7266 -0.3535 -0.6953 -0.4004 -0.6367 -0.4141 -0.6094 -0.4121 -0.5781
+M0 C77 86.1 -0.7969 -0.3281 -0.7383 -0.4043 -0.6719 -0.4746 -0.6289 -0.5273 -0.6562 -0.5195 -0.6328 -0.5117 -0.5898 -0.5273 -0.5352 -0.5273
+M0 C78 86.1 -0.4551 -0.5391 -0.4980 -0.5352 -0.5039 -0.5078 -0.5273 -0.5195 -0.5312 -0.5234 -0.5117 -0.5156 -0.4805 -0.5156 -0.4180 -0.4883
+M0 C79 86.2 1.6484 1.3203 1.5391 1.3516 1.4453 1.2891 1.2969 1.0781 0.6055 0.6289 -0.0825 0.0481 -0.3496 -0.2754 -0.4629 -0.2285
+M0 C80 86.1 1.4219 0.3789 0.9414 0.5586 0.6562 0.4434 0.3359 0.2637 -0.1992 -0.1631 -0.4297 -0.3672 -0.3633 -0.4199 -0.2695 -0.4629
+M0 C81 86.1 -1.5703 0.4277 -0.9102 -0.2197 -0.6484 -0.4805 -0.4688 -0.6797 -0.5156 -0.6445 -0.5039 -0.6250 -0.5156 -0.6289 -0.4922 -0.6133
+M0 C82 86.1 0.6797 1.4609 0.9766 1.1484 1.0547 1.1406 0.6484 0.8008 -0.0260 0.1670 -0.4902 -0.2520 -0.4395 -0.3457 -0.4180 -0.3516
+M0 C83 86.1 -1.8516 0.7656 -0.8516 -0.1582 -0.5312 -0.4590 -0.3633 -0.6680 -0.4180 -0.6133 -0.4160 -0.6094 -0.4082 -0.6055 -0.3926 -0.5859
+M0 C84 86.2 -0.4219 -0.5430 -0.4570 -0.5352 -0.4629 -0.5078 -0.4805 -0.5117 -0.4961 -0.5234 -0.4785 -0.5117 -0.4414 -0.5078 -0.3828 -0.4844
+M0 C85 86.1 1.4922 1.5078 1.3281 1.2578 1.2188 0.8359 0.9805 0.5547 0.2617 0.1094 -0.3281 -0.3281 -0.2344 -0.1602 -0.2207 -0.0532
+M0 C86 86.1 1.2812 1.7109 0.5977 0.9609 0.1943 0.5117 -0.4570 -0.2002 -0.5273 -0.1963 -0.6484 -0.2598 -0.5938 -0.2480 -0.7031 -0.0767
+M0 C87 86.1 1.4922 1.0391 0.9688 0.6211 0.6914 0.1357 0.1953 -0.5625 -0.2402 -0.5430 -0.4727 -0.5156 -0.4238 -0.5430 -0.4219 -0.4863
+M0 C88 86.1 0.5039 -1.5781 0.0525 -1.1250 -0.0413 -1.0312 -0.2676 -0.7969 -0.3926 -0.6836 -0.4570 -0.6133 -0.3633 -0.6875 -0.2695 -0.7578
+M0 C89 86.2 -1.5547 0.4238 -0.9414 -0.1748 -0.6836 -0.4375 -0.4688 -0.6914 -0.5430 -0.6211 -0.5664 -0.5664 -0.5938 -0.5391 -0.5547 -0.5273
+M0 C90 86.1 0.5820 -1.5703 0.1006 -1.1641 0.0011 -1.0547 -0.2471 -0.8047 -0.3789 -0.6953 -0.4590 -0.6016 -0.3379 -0.7148 -0.2441 -0.7734
+M0 C91 86.1 1.5156 1.4375 1.1797 1.1016 1.0703 0.7344 0.6172 0.1475 0.0493 -0.1631 -0.4258 -0.4609 -0.3945 -0.4414 -0.3965 -0.3398
+M0 C92 86.1 0.3047 -1.4453 -0.1562 -0.9570 -0.2656 -0.8555 -0.4805 -0.6445 -0.5469 -0.5820 -0.5117 -0.6133 -0.4297 -0.6719 -0.3379 -0.7148
+M0 C93 86.1 -1.7500 0.6406 -0.9648 -0.0918 -0.6562 -0.3848 -0.4531 -0.6133 -0.5312 -0.5586 -0.5117 -0.5508 -0.5469 -0.5117 -0.5156 -0.5039
+M0 C94 86.2 1.1875 1.6875 0.5430 0.9648 0.2539 0.5703 -0.4004 -0.0613 -0.5039 -0.1992 -0.6367 -0.3066 -0.6055 -0.2949 -0.7266 -0.1221
+M0 C95 86.1 1.5000 1.5312 1.3047 1.3438 1.2422 1.0234 0.9336 0.7266 0.2100 0.1807 -0.4355 -0.3652 -0.3438 -0.1289 -0.3164 -0.0021
+M0 C96 86.2 -0.1963 -0.9531 -0.4766 -0.6680 -0.5195 -0.6328 -0.6016 -0.5625 -0.6133 -0.5586 -0.5664 -0.5938 -0.4824 -0.6602 -0.4043 -0.6680
+M0 C97 86.1 1.1094 -0.4551 0.3320 -0.9141 0.1172 -1.0469 -0.1289 -0.8789 -0.2930 -0.7422 -0.4258 -0.6289 -0.3457 -0.6875 -0.3320 -0.6445
+M0 C98 86.1 1.4844 0.9141 0.7891 0.4844 0.4707 -0.0300 -0.0115 -0.5781 -0.3027 -0.5820 -0.4727 -0.5312 -0.4238 -0.5586 -0.4336 -0.5039
+M0 C99 86.1 0.0674 -1.2109 -0.3262 -0.8047 -0.3984 -0.7266 -0.5508 -0.5938 -0.5820 -0.5781 -0.5234 -0.6172 -0.4434 -0.6719 -0.3633 -0.7031
+  Avg: 86.13 ms, Total: 8612.90 ms
+Done.
+[130.558869 0:15 starry_kernel::task::ops:448] Task(15, "bench_multi") exit with code: 0
+[130.568604 0:15 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[130.582686 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.593941 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[130.630791 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.642182 0:16 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[130.661918 0:16 starry_kernel::task::ops:448] Task(16, "busybox") exit with code: 0
+[130.671125 0:16 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[130.680906 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.692163 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[130.710375 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.721727 0:17 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[132.752338 0:17 starry_kernel::task::ops:448] Task(17, "busybox") exit with code: 0
+[132.761493 0:17 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[132.771348 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[132.782722 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[132.795478 0:18 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[132.815065 0:18 starry_kernel::task::ops:448] Task(18, "busybox") exit with code: 0
+[132.824303 0:18 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[132.834099 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[132.845353 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc3 ===
+[132.859805 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[132.871156 0:19 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc3.cvimodel ===
+[133.354337 0:19 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[133.365560 0:19 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[133.377471 0:19 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[133.389072 0:19 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[133.555608 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[133.572042 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=7, handle=7, phys_addr=0x87177000, size=90088080
+[133.585839 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x87177000, buffer_size=90088080, requested_length=90091520, map_le0
+[133.602016 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:02:10 bench_multi: version: 1.4.0
+[133.612848 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:02:10 bench_multi: act_E3D4 Build at 2026-05-29 10:08:18 For platform cv181x
+[133.631406 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x327000, length=90091520
+[187.304278 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[187.314522 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=8, handle=8, phys_addr=0x8c762000, size=893312
+[187.328160 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8c762000, buffer_size=893312, requested_length=897024, map_length4
+[187.343894 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x5a03000, length=897024
+[187.393870 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:03:04 bench_multi: Max SharedMem size:1205248
+[187.574625 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[187.584934 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=5, handle=9, phys_addr=0x8c83d000, size=1205248
+[187.598596 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8c83d000, buffer_size=1205248, requested_length=1208320, map_leng0
+[187.614586 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x5ade000, length=1208320
+[187.637141 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[187.647373 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=9, handle=10, phys_addr=0x86e1f000, size=602112
+[187.661111 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x86e1f000, buffer_size=602112, requested_length=602112, map_length2
+[187.676819 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x5912000, length=602112
+[187.688486 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[187.698674 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=10, handle=11, phys_addr=0x80ee7000, size=8
+[187.712093 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80ee7000, buffer_size=8, requested_length=4096, map_length=4096
+[187.726953 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x1000, length=4096
+[187.763409 0:19 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[187.773584 0:19 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=11, handle=12, phys_addr=0x86e0d000, size=64
+[187.787110 0:19 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x86e0d000, buffer_size=64, requested_length=4096, map_length=4096
+[187.802079 0:19 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x2000, length=4096
+M0 C0 79.7 -1.0781 -0.0520 -0.6953 -0.4570 -0.5391 -0.6094 -0.4707 -0.6953 -0.4844 -0.6836 -0.4707 -0.6875 -0.4727 -0.6680 -0.4512 -0.6406
+M0 C1 79.7 -1.0781 -0.0520 -0.6953 -0.4570 -0.5391 -0.6094 -0.4707 -0.6953 -0.4844 -0.6836 -0.4707 -0.6875 -0.4727 -0.6680 -0.4512 -0.6406
+M0 C2 79.7 -1.0781 -0.0520 -0.6953 -0.4570 -0.5391 -0.6094 -0.4707 -0.6953 -0.4844 -0.6836 -0.4707 -0.6875 -0.4727 -0.6680 -0.4512 -0.6406
+M0 C3 79.8 -1.0781 -0.0520 -0.6953 -0.4570 -0.5391 -0.6094 -0.4707 -0.6953 -0.4844 -0.6836 -0.4707 -0.6875 -0.4727 -0.6680 -0.4512 -0.6406
+M0 C4 79.7 -1.0781 -0.0520 -0.6953 -0.4570 -0.5391 -0.6094 -0.4707 -0.6953 -0.4844 -0.6836 -0.4707 -0.6875 -0.4727 -0.6680 -0.4512 -0.6406
+M0 C5 79.7 0.4980 -1.6328 -0.0220 -1.0703 -0.1582 -0.9336 -0.4590 -0.6289 -0.5195 -0.5781 -0.4863 -0.6133 -0.3574 -0.7461 -0.2656 -0.7969
+M0 C6 79.7 0.4980 -1.6328 -0.0220 -1.0703 -0.1582 -0.9336 -0.4590 -0.6289 -0.5195 -0.5781 -0.4863 -0.6133 -0.3574 -0.7461 -0.2656 -0.7969
+M0 C7 79.7 0.4980 -1.6328 -0.0220 -1.0703 -0.1582 -0.9336 -0.4590 -0.6289 -0.5195 -0.5781 -0.4863 -0.6133 -0.3574 -0.7461 -0.2656 -0.7969
+M0 C8 79.8 0.4980 -1.6328 -0.0220 -1.0703 -0.1582 -0.9336 -0.4590 -0.6289 -0.5195 -0.5781 -0.4863 -0.6133 -0.3574 -0.7461 -0.2656 -0.7969
+M0 C9 79.7 0.4980 -1.6328 -0.0220 -1.0703 -0.1582 -0.9336 -0.4590 -0.6289 -0.5195 -0.5781 -0.4863 -0.6133 -0.3574 -0.7461 -0.2656 -0.7969
+M0 C10 79.7 0.4902 -1.6172 0.0347 -1.1172 -0.1416 -0.9219 -0.4512 -0.6094 -0.5352 -0.5312 -0.5625 -0.4941 -0.4160 -0.6367 -0.3301 -0.6797
+M0 C11 79.7 0.5117 -1.6328 0.0742 -1.1328 -0.1108 -0.9336 -0.4258 -0.6211 -0.5234 -0.5430 -0.5508 -0.4902 -0.4102 -0.6289 -0.3242 -0.6680
+M0 C12 79.7 0.5000 -1.6172 0.0132 -1.0938 -0.1846 -0.8867 -0.4824 -0.5898 -0.5625 -0.5156 -0.5664 -0.4941 -0.4160 -0.6289 -0.3242 -0.6719
+M0 C13 79.7 0.5000 -1.6172 0.0342 -1.1016 -0.1484 -0.9062 -0.4043 -0.6445 -0.4863 -0.5742 -0.5430 -0.5078 -0.4102 -0.6367 -0.3242 -0.6719
+M0 C14 79.8 0.5117 -1.6328 0.0542 -1.1172 -0.1245 -0.9219 -0.4102 -0.6445 -0.4883 -0.5742 -0.5391 -0.5000 -0.4023 -0.6406 -0.3203 -0.6836
+M0 C15 79.7 0.5078 -1.6328 0.0630 -1.1250 -0.1406 -0.9023 -0.3867 -0.6562 -0.4844 -0.5625 -0.5469 -0.4844 -0.4102 -0.6250 -0.3242 -0.6602
+M0 C16 79.7 0.5195 -1.6484 0.0879 -1.1562 -0.0898 -0.9570 -0.4023 -0.6406 -0.5195 -0.5430 -0.5625 -0.4824 -0.4180 -0.6289 -0.3301 -0.6602
+M0 C17 79.7 0.5195 -1.6562 0.0840 -1.1562 -0.0981 -0.9570 -0.3926 -0.6523 -0.5000 -0.5664 -0.5430 -0.5078 -0.4043 -0.6445 -0.3203 -0.6797
+M0 C18 79.7 0.4648 -1.5781 0.0471 -1.1094 -0.1309 -0.9141 -0.4043 -0.6445 -0.5391 -0.5273 -0.5625 -0.4727 -0.4238 -0.6055 -0.3418 -0.6406
+M0 C19 79.8 0.5156 -1.6406 0.0845 -1.1562 -0.0962 -0.9531 -0.3789 -0.6680 -0.4941 -0.5625 -0.5469 -0.4961 -0.4043 -0.6445 -0.3203 -0.6719
+M0 C20 79.7 -0.4180 -0.5625 -0.4590 -0.5352 -0.4648 -0.5117 -0.4824 -0.5156 -0.4902 -0.5234 -0.4746 -0.5117 -0.4414 -0.5078 -0.3809 -0.4805
+M0 C21 79.8 -0.9375 -0.1611 -0.7227 -0.4023 -0.5977 -0.5312 -0.5547 -0.5898 -0.5820 -0.5625 -0.5547 -0.5625 -0.5195 -0.5664 -0.4629 -0.5586
+M0 C22 79.7 1.5859 1.4297 1.5312 1.4062 1.4531 1.3516 1.3438 1.2812 0.9648 0.9883 0.3691 0.4453 0.1172 0.1641 -0.1387 -0.0178
+M0 C23 79.7 -1.8359 0.7461 -0.8711 -0.1396 -0.5312 -0.4492 -0.3789 -0.6289 -0.3887 -0.6133 -0.3789 -0.6133 -0.3945 -0.5898 -0.3613 -0.5703
+M0 C24 79.7 0.0016 -1.0547 -0.3262 -0.7344 -0.4082 -0.6484 -0.5312 -0.5586 -0.5430 -0.5508 -0.5234 -0.5469 -0.4941 -0.5430 -0.3887 -0.5820
+M0 C25 79.7 -0.7305 -0.3848 -0.6562 -0.4766 -0.5859 -0.5469 -0.5508 -0.5938 -0.5781 -0.5820 -0.5586 -0.5703 -0.5234 -0.5781 -0.4570 -0.5781
+M0 C26 79.8 1.4531 1.4141 1.3672 1.2812 1.2969 1.2422 1.0547 1.0547 0.4082 0.4883 -0.3164 -0.1875 -0.4023 -0.2773 -0.3672 -0.2969
+M0 C27 79.7 1.5469 1.3750 1.4531 1.3281 1.3672 1.2578 1.2109 1.1484 0.6953 0.7188 0.1250 0.1797 -0.2002 -0.1670 -0.2402 -0.1572
+M0 C28 79.7 -0.2432 -0.7969 -0.4258 -0.6328 -0.4473 -0.6055 -0.5195 -0.5625 -0.5391 -0.5508 -0.5195 -0.5430 -0.4746 -0.5625 -0.3828 -0.5859
+M0 C29 79.7 -1.3438 0.3926 -0.7148 -0.1934 -0.4922 -0.3730 -0.4141 -0.4883 -0.4180 -0.5039 -0.3984 -0.5039 -0.3770 -0.5039 -0.3262 -0.4883
+M0 C30 79.7 -0.4258 -0.5469 -0.4570 -0.5312 -0.4590 -0.5156 -0.4766 -0.5273 -0.4922 -0.5312 -0.4727 -0.5156 -0.4395 -0.5156 -0.3770 -0.4883
+M0 C31 79.7 -1.1250 -0.0126 -0.8008 -0.3457 -0.6602 -0.4844 -0.5781 -0.5781 -0.6055 -0.5664 -0.5820 -0.5625 -0.5586 -0.5742 -0.5039 -0.5586
+M0 C32 79.7 -0.2344 -0.6992 -0.3711 -0.5742 -0.3945 -0.5352 -0.4473 -0.5039 -0.4746 -0.4902 -0.4512 -0.4824 -0.4141 -0.4844 -0.3379 -0.4668
+M0 C33 79.7 0.1138 -1.0859 -0.2500 -0.7266 -0.3184 -0.6445 -0.4199 -0.5625 -0.4648 -0.5391 -0.4551 -0.5195 -0.4180 -0.5273 -0.3242 -0.5430
+M0 C34 79.7 -0.1416 -0.9492 -0.4258 -0.6719 -0.5117 -0.5938 -0.5977 -0.5352 -0.6094 -0.5234 -0.5859 -0.5195 -0.5391 -0.5469 -0.4336 -0.5820
+M0 C35 79.8 1.5234 1.2656 1.3984 1.2188 1.2969 1.1406 1.0547 0.9648 0.5508 0.5352 -0.0302 -0.0293 -0.2432 -0.2715 -0.2490 -0.2734
+M0 C36 79.7 0.5703 -1.6797 0.1465 -1.2188 0.0075 -1.0625 -0.2969 -0.7383 -0.4355 -0.6055 -0.5312 -0.4883 -0.3809 -0.6523 -0.3008 -0.6953
+M0 C37 79.7 -0.4375 -0.5547 -0.4902 -0.5117 -0.5000 -0.4902 -0.5273 -0.4902 -0.5273 -0.5078 -0.4980 -0.5117 -0.4688 -0.5039 -0.4004 -0.4746
+M0 C38 79.7 0.2715 -1.4062 -0.1436 -0.9688 -0.3027 -0.7969 -0.5703 -0.5430 -0.6016 -0.5195 -0.5742 -0.5273 -0.4609 -0.6250 -0.3750 -0.6602
+M0 C39 79.7 -1.8438 0.7344 -0.9453 -0.0630 -0.6133 -0.3789 -0.3789 -0.6367 -0.4355 -0.5820 -0.4473 -0.5625 -0.4688 -0.5352 -0.4629 -0.5000
+M0 C40 79.8 -1.8359 0.7656 -0.9062 -0.0737 -0.5703 -0.3770 -0.3301 -0.6562 -0.3867 -0.5977 -0.4043 -0.5547 -0.4238 -0.5234 -0.3887 -0.5117
+M0 C41 79.7 -0.9844 0.4316 -0.5195 -0.0212 -0.3320 -0.1074 -0.4316 -0.2930 -0.4316 -0.3555 -0.4121 -0.3867 -0.3809 -0.3848 -0.3398 -0.3516
+M0 C42 79.8 1.3828 1.4844 1.3750 1.3516 1.2891 1.2891 1.0781 1.1484 0.5352 0.7148 -0.1709 0.0491 -0.4102 -0.2070 -0.4023 -0.2324
+M0 C43 79.7 0.6992 -1.2109 0.2051 -0.6367 -0.0420 -0.5703 -0.2754 -0.4766 -0.3926 -0.4277 -0.4805 -0.4453 -0.4375 -0.4707 -0.2656 -0.5664
+M0 C44 79.7 -0.7539 0.4004 0.0752 0.3125 0.2930 0.4180 0.1885 0.2617 -0.2891 -0.2754 -0.4160 -0.4102 -0.3555 -0.4395 -0.3125 -0.4297
+M0 C45 79.7 -1.8359 0.7031 -0.9219 -0.1196 -0.5898 -0.4297 -0.3984 -0.6523 -0.4395 -0.6094 -0.4414 -0.5820 -0.4453 -0.5859 -0.4297 -0.5625
+M0 C46 79.7 -0.5430 -0.4883 -0.5352 -0.5156 -0.5039 -0.5391 -0.5039 -0.5664 -0.5156 -0.5625 -0.5000 -0.5586 -0.4668 -0.5508 -0.4121 -0.5234
+M0 C47 79.8 0.6055 -1.7031 0.1406 -1.1797 -0.0684 -0.9570 -0.4219 -0.5898 -0.4824 -0.5312 -0.5156 -0.5039 -0.3711 -0.6484 -0.2910 -0.6758
+M0 C48 79.7 -1.8047 0.6953 -0.9180 -0.1201 -0.5977 -0.4258 -0.3984 -0.6523 -0.4316 -0.6211 -0.4375 -0.5898 -0.4492 -0.5859 -0.4375 -0.5547
+M0 C49 79.7 -0.4531 -0.5508 -0.4961 -0.5430 -0.4883 -0.5312 -0.5039 -0.5430 -0.5234 -0.5391 -0.5078 -0.5234 -0.4727 -0.5234 -0.4121 -0.5039
+M0 C50 79.7 1.3359 1.5703 0.9492 0.9297 0.7070 0.6562 0.2656 0.2832 -0.0112 0.0569 -0.3496 -0.2676 -0.2910 -0.2500 -0.2246 -0.1064
+M0 C51 79.7 -1.9062 0.7734 -0.9336 -0.1089 -0.5859 -0.4199 -0.3359 -0.7070 -0.4355 -0.6211 -0.3984 -0.6367 -0.4551 -0.5547 -0.4316 -0.5469
+M0 C52 79.8 -0.4961 -0.6055 -0.5039 -0.6133 -0.5078 -0.6055 -0.5312 -0.5938 -0.5469 -0.5938 -0.5312 -0.5898 -0.4941 -0.5977 -0.4355 -0.5859
+M0 C53 79.7 -1.2969 0.1582 -0.7734 -0.3965 -0.5820 -0.6016 -0.4570 -0.7305 -0.4941 -0.6992 -0.4746 -0.6992 -0.4785 -0.6914 -0.4492 -0.6758
+M0 C54 79.7 -1.9062 0.8438 -1.0703 0.0967 -0.6641 -0.2793 -0.2832 -0.7305 -0.4199 -0.6055 -0.4297 -0.5664 -0.5352 -0.4238 -0.5039 -0.4238
+M0 C55 79.7 -1.1016 0.1445 -0.6836 -0.3301 -0.5508 -0.4473 -0.5000 -0.5234 -0.5039 -0.5469 -0.4883 -0.5469 -0.4316 -0.5781 -0.3906 -0.5312
+M0 C56 79.7 -1.8906 0.8047 -1.0000 -0.0144 -0.6172 -0.3770 -0.3750 -0.6680 -0.4297 -0.6250 -0.4102 -0.6172 -0.4551 -0.5508 -0.4199 -0.5664
+M0 C57 79.8 -1.8828 0.7812 -1.0234 0.0007 -0.6367 -0.3574 -0.3750 -0.6758 -0.4629 -0.5977 -0.4473 -0.5820 -0.5078 -0.5078 -0.4570 -0.5234
+M0 C58 79.7 1.0781 1.5703 0.4707 0.6250 0.0889 0.2061 -0.4121 -0.2910 -0.4121 -0.1934 -0.5273 -0.3730 -0.4727 -0.3574 -0.4199 -0.2812
+M0 C59 79.7 -1.8672 0.7695 -1.0078 -0.0193 -0.6445 -0.3594 -0.3809 -0.6719 -0.4883 -0.5781 -0.4570 -0.5742 -0.5078 -0.5078 -0.4609 -0.5234
+M0 C60 79.7 -0.2910 0.8594 -0.4648 -0.1177 -0.3965 -0.2373 -0.5352 -0.3887 -0.5312 -0.4434 -0.5195 -0.4883 -0.4551 -0.5117 -0.4102 -0.4551
+M0 C61 79.7 0.4883 -1.6094 0.0610 -1.1406 -0.0165 -1.0547 -0.2461 -0.8242 -0.3613 -0.7148 -0.3945 -0.6758 -0.2969 -0.7695 -0.2197 -0.8125
+M0 C62 79.8 -1.9062 0.8398 -1.0234 0.0457 -0.6367 -0.3281 -0.3145 -0.6953 -0.4492 -0.5781 -0.4453 -0.5586 -0.5195 -0.4688 -0.4707 -0.4902
+M0 C63 79.7 1.3828 1.5781 1.1406 1.1094 0.9336 0.7773 0.5312 0.5195 -0.0153 0.0718 -0.3574 -0.2080 -0.3359 -0.1914 -0.1963 -0.0159
+M0 C64 79.7 1.0703 1.5625 0.3848 0.6055 -0.0089 0.1699 -0.4609 -0.2656 -0.4590 -0.1709 -0.5352 -0.3457 -0.4785 -0.3379 -0.4238 -0.2715
+M0 C65 79.7 1.1094 1.5859 0.5352 0.6797 0.1670 0.2734 -0.3418 -0.2363 -0.3789 -0.1807 -0.5312 -0.3652 -0.4746 -0.3594 -0.3906 -0.2695
+M0 C66 79.7 1.4531 1.4609 1.2266 1.1641 1.1016 0.7773 0.8828 0.5859 0.1260 0.0400 -0.2988 -0.2891 -0.2021 -0.1338 -0.0299 0.0889
+M0 C67 79.8 -1.5391 0.4141 -0.8398 -0.3008 -0.6016 -0.5391 -0.4883 -0.6680 -0.4941 -0.6641 -0.4746 -0.6680 -0.4824 -0.6562 -0.4492 -0.6523
+M0 C68 79.7 -0.4395 -0.6602 -0.4746 -0.6562 -0.4785 -0.6406 -0.5078 -0.6211 -0.5273 -0.6211 -0.5078 -0.6172 -0.4707 -0.6250 -0.4023 -0.6289
+M0 C69 79.7 -1.2422 0.2148 -0.7109 -0.3223 -0.5547 -0.4902 -0.4922 -0.5781 -0.5039 -0.5703 -0.4785 -0.5820 -0.4473 -0.5977 -0.3945 -0.5625
+M0 C70 79.7 -1.8594 0.7969 -0.9023 -0.0635 -0.5469 -0.3906 -0.3691 -0.6133 -0.4121 -0.5625 -0.3926 -0.5664 -0.4062 -0.5430 -0.3613 -0.5234
+M0 C71 79.7 -0.1191 -0.9609 -0.3613 -0.7188 -0.4570 -0.6250 -0.5391 -0.5664 -0.5625 -0.5586 -0.5391 -0.5508 -0.5039 -0.5547 -0.3965 -0.5938
+M0 C72 79.8 0.5977 -1.6484 0.1982 -1.1953 0.0227 -0.9883 -0.2236 -0.7188 -0.4238 -0.5352 -0.4941 -0.4570 -0.3379 -0.6250 -0.2451 -0.6797
+M0 C73 79.7 0.5664 -1.6719 0.1069 -1.1562 -0.0942 -0.9336 -0.4062 -0.6133 -0.4824 -0.5430 -0.4980 -0.5078 -0.3555 -0.6562 -0.2695 -0.6992
+M0 C74 79.7 0.5117 -1.6250 0.1357 -1.1797 -0.0102 -1.0078 -0.2734 -0.7344 -0.4180 -0.6055 -0.4805 -0.5195 -0.3691 -0.6484 -0.2988 -0.6875
+M0 C75 79.7 0.4668 -1.6016 0.0476 -1.1328 -0.1094 -0.9492 -0.4160 -0.6328 -0.5117 -0.5469 -0.5312 -0.5117 -0.4043 -0.6445 -0.3242 -0.6797
+M0 C76 79.7 -1.8203 0.7383 -0.8789 -0.1064 -0.5430 -0.4160 -0.3086 -0.6914 -0.3457 -0.6562 -0.3789 -0.6055 -0.4004 -0.5664 -0.3770 -0.5508
+M0 C77 79.8 -0.8008 -0.3359 -0.7461 -0.4023 -0.6797 -0.4746 -0.6367 -0.5234 -0.6641 -0.5156 -0.6445 -0.5039 -0.6016 -0.5234 -0.5469 -0.5195
+M0 C78 79.7 -0.4375 -0.5742 -0.4941 -0.5430 -0.5039 -0.5156 -0.5234 -0.5195 -0.5352 -0.5273 -0.5156 -0.5195 -0.4844 -0.5195 -0.4180 -0.4941
+M0 C79 79.7 1.5859 1.2578 1.4609 1.2812 1.3672 1.2266 1.2031 1.0625 0.5898 0.5938 -0.0811 0.0344 -0.3320 -0.2773 -0.3789 -0.2139
+M0 C80 79.7 1.2891 0.3105 0.8320 0.4961 0.5977 0.3926 0.3574 0.2656 -0.1875 -0.1953 -0.4043 -0.3711 -0.3594 -0.4102 -0.2891 -0.4219
+M0 C81 79.7 -1.5156 0.3789 -0.9023 -0.2100 -0.6641 -0.4395 -0.4648 -0.6602 -0.5312 -0.6133 -0.5156 -0.5898 -0.5234 -0.5938 -0.4883 -0.5820
+M0 C82 79.8 0.4629 1.2500 0.8125 0.9844 0.9531 1.0469 0.6445 0.7891 -0.0046 0.1777 -0.4512 -0.2656 -0.4219 -0.3223 -0.3613 -0.3281
+M0 C83 79.7 -1.7969 0.7383 -0.8359 -0.1445 -0.5312 -0.4199 -0.3496 -0.6367 -0.4043 -0.5820 -0.3906 -0.5820 -0.3906 -0.5742 -0.3613 -0.5547
+M0 C84 79.7 -0.3926 -0.5781 -0.4512 -0.5430 -0.4609 -0.5117 -0.4766 -0.5195 -0.4902 -0.5234 -0.4727 -0.5156 -0.4375 -0.5117 -0.3770 -0.4922
+M0 C85 79.7 1.4844 1.4766 1.2891 1.2344 1.1406 0.8203 0.9453 0.6172 0.1406 0.0908 -0.3262 -0.2891 -0.1260 -0.0078 0.0087 0.1973
+M0 C86 79.7 1.2266 1.6562 0.5781 0.9141 0.2217 0.5625 -0.3027 0.1221 -0.4004 0.0850 -0.5781 -0.1553 -0.4395 -0.1147 -0.3457 0.0400
+M0 C87 79.8 1.4219 0.9531 0.8594 0.5078 0.5625 0.0510 0.0884 -0.5742 -0.2773 -0.5156 -0.4688 -0.4941 -0.4277 -0.4980 -0.4102 -0.4102
+M0 C88 79.7 0.4219 -1.5391 0.0082 -1.1016 -0.0649 -1.0156 -0.2695 -0.8125 -0.3867 -0.7031 -0.4082 -0.6758 -0.3535 -0.7109 -0.2793 -0.7578
+M0 C89 79.7 -1.5078 0.3750 -0.9336 -0.1768 -0.6992 -0.4141 -0.4766 -0.6758 -0.5625 -0.5977 -0.5859 -0.5312 -0.6133 -0.5039 -0.5742 -0.5039
+M0 C90 79.7 0.5000 -1.5781 0.0566 -1.1250 -0.0311 -1.0312 -0.2490 -0.8086 -0.3633 -0.6992 -0.3887 -0.6797 -0.3223 -0.7344 -0.2461 -0.7852
+M0 C91 79.7 1.5000 1.3828 1.1406 1.0234 0.9844 0.6328 0.5352 0.1118 -0.0215 -0.1836 -0.4082 -0.4316 -0.3223 -0.3203 -0.2275 -0.1543
+M0 C92 79.8 0.2256 -1.3828 -0.1855 -0.9492 -0.2656 -0.8672 -0.4551 -0.6719 -0.5352 -0.6055 -0.4961 -0.6328 -0.4355 -0.6758 -0.3516 -0.7148
+M0 C93 79.7 -1.6875 0.5781 -0.9453 -0.0962 -0.6641 -0.3516 -0.4805 -0.5547 -0.5430 -0.5156 -0.5078 -0.5273 -0.5430 -0.4883 -0.5117 -0.4746
+M0 C94 79.7 1.1328 1.6328 0.5156 0.9102 0.2227 0.5938 -0.2520 0.1611 -0.3984 0.0505 -0.5977 -0.2354 -0.5234 -0.2090 -0.5273 -0.0952
+M0 C95 79.7 1.4844 1.5078 1.2266 1.2812 1.1250 1.0234 0.8086 0.7344 0.1152 0.1875 -0.4590 -0.3574 -0.2637 -0.0520 -0.0923 0.2139
+M0 C96 79.7 -0.1963 -0.9648 -0.4746 -0.6836 -0.5156 -0.6445 -0.6094 -0.5664 -0.6289 -0.5625 -0.5781 -0.5859 -0.4922 -0.6445 -0.4180 -0.6680
+M0 C97 79.8 0.9258 -0.7930 0.2344 -1.0000 0.0811 -1.0312 -0.1318 -0.8633 -0.2852 -0.7383 -0.3848 -0.6523 -0.3457 -0.6641 -0.3008 -0.6406
+M0 C98 79.7 1.3828 0.7539 0.6523 0.3281 0.3398 -0.1553 -0.0593 -0.5898 -0.3125 -0.5586 -0.4707 -0.5117 -0.4395 -0.5234 -0.4258 -0.4531
+M0 C99 79.7 0.0306 -1.1875 -0.3262 -0.8164 -0.3828 -0.7500 -0.5391 -0.6094 -0.5820 -0.5859 -0.5273 -0.6133 -0.4590 -0.6680 -0.3828 -0.6953
+  Avg: 79.73 ms, Total: 7973.37 ms
+Done.
+[247.258427 0:19 starry_kernel::task::ops:448] Task(19, "bench_multi") exit with code: 0
+[247.268161 0:19 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[247.282002 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[247.293416 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[247.308272 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[247.319545 0:20 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[247.340908 0:20 starry_kernel::task::ops:448] Task(20, "busybox") exit with code: 0
+[247.350075 0:20 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[247.359900 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[247.371156 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[247.384058 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[247.395408 0:21 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[249.423057 0:21 starry_kernel::task::ops:448] Task(21, "busybox") exit with code: 0
+[249.432211 0:21 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[249.442055 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[249.453310 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[249.466270 0:22 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[249.501592 0:22 starry_kernel::task::ops:448] Task(22, "busybox") exit with code: 0
+[249.510831 0:22 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[249.520638 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[249.531891 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc2 ===
+[249.546347 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[249.557686 0:23 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc2.cvimodel ===
+[250.059873 0:23 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[250.071097 0:23 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[250.083039 0:23 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[250.094569 0:23 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[250.260135 0:23 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[250.282979 0:23 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[250.293173 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:07 bench_multi: version: 1.4.0
+[250.303983 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:07 bench_multi: act_E2D4 Build at 2026-05-29 10:08:41 For platform cv181x
+[250.318669 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[250.332467 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev
+[250.343308 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev success
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[250.362570 0:23 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yyda/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(b.
+[250.397577 0:23 starry_kernel::task::signal:268] Send signal SIGABRT to thread 23
+[250.406531 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[250.420301 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev
+[250.431140 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev success
+[250.442698 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[250.456496 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev
+[250.467379 0:23 starry_kernel::task::ops:448] Task(23, "bench_multi") exit with code: 134
+[250.477132 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:07 bench_multi: reopen ion dev success
+[250.488666 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:04:07 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[250.639604 0:23 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[250.650204 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[250.663648 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[250.678618 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[250.689989 0:24 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[250.706708 0:24 starry_kernel::task::ops:448] Task(24, "busybox") exit with code: 0
+[250.715893 0:24 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[250.725710 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[250.736963 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[250.750009 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[250.761265 0:25 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[252.780041 0:25 starry_kernel::task::ops:448] Task(25, "busybox") exit with code: 0
+[252.789193 0:25 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[252.799065 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[252.810319 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[252.823298 0:26 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[252.847629 0:26 starry_kernel::task::ops:448] Task(26, "busybox") exit with code: 0
+[252.856872 0:26 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[252.866667 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[252.878042 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc1 ===
+[252.892387 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[252.903644 0:27 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc1.cvimodel ===
+[253.428005 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[253.439229 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[253.451171 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[253.462702 0:27 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[253.621026 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[253.643865 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev succes[253.661242 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:10 bench_multi: version: 1.4.0
+[253.672066 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:10 bench_multi: act_enc1 Build at 2026-05-29 10:26:00 For platform cv181x
+[253.686752 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: ion alloc failed, size = 72732304, ret=ffffffff
+[253.700549 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev
+[253.711391 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev success
+s
+[253.723474 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yyda/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(b.
+[253.758510 0:27 starry_kernel::task::signal:268] Send signal SIGABRT to thread 27
+[253.767478 0:27 starry_kernel::task::ops:448] Task(27, "bench_multi") exit with code: 134
+[253.777235 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: ion alloc failed, size = 72732304, ret=ffffffff
+[253.791010 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev
+[253.801848 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev success
+[253.813406 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: ion alloc failed, size = 72732304, ret=ffffffff
+[253.827204 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev
+[253.838084 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:10 bench_multi: reopen ion dev success
+[253.849608 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:04:10 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[254.001811 0:27 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[254.012398 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[254.025796 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[254.040907 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[254.052182 0:28 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[254.069054 0:28 starry_kernel::task::ops:448] Task(28, "busybox") exit with code: 0
+[254.078220 0:28 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[254.088040 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[254.099294 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[254.112216 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[254.123552 0:29 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[256.142331 0:29 starry_kernel::task::ops:448] Task(29, "busybox") exit with code: 0
+[256.151486 0:29 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[256.161340 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[256.172595 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[256.185580 0:30 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[256.209901 0:30 starry_kernel::task::ops:448] Task(30, "busybox") exit with code: 0
+[256.219143 0:30 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[256.228955 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[256.240209 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_ffn1600 ===
+[256.254959 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[256.266216 0:31 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_ffn1600.cvimodel ===
+[256.769457 0:31 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[256.780681 0:31 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[256.792623 0:31 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[256.804152 0:31 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[256.973575 0:31 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reo[256.992667 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:13 bench_multi: version: 1.4.0
+[257.003507 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:13 bench_multi: act_ffn1600 Build at 2026-05-29 10:26:17 For platform cv181x
+[257.018448 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: ion alloc failed, size = 72500368, ret=ffffffff
+pen ion dev
+reopen ion dev success
+[257.036032 0:31 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[257.053885 0:31 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_mult[257.072652 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: reopen ion dev
+[257.083485 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: reopen ion dev success
+i: /home/yyda/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(bmctx_t, si.
+[257.111296 0:31 starry_kernel::task::signal:268] Send signal SIGABRT to thread 31
+[257.120240 0:31 starry_kernel::task::ops:448] Task(31, "bench_multi") exit with code: 134
+[257.130007 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: ion alloc failed, size = 72500368, ret=ffffffff
+[257.143795 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: reopen ion dev
+[257.154621 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: reopen ion dev success
+[257.166179 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: ion alloc failed, size = 72500368, ret=ffffffff
+[257.179977 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:13 bench_multi: reopen ion dev
+[257.321499 0:31 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[257.332102 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[257.345500 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[257.360462 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[257.371831 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:14 bench_multi: reopen ion dev success
+[257.383253 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:04:14 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[257.402888 0:32 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[257.419794 0:32 starry_kernel::task::ops:448] Task(32, "busybox") exit with code: 0
+[257.428961 0:32 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[257.438788 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[257.450160 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[257.462964 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[257.474221 0:33 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[259.493063 0:33 starry_kernel::task::ops:448] Task(33, "busybox") exit with code: 0
+[259.502217 0:33 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[259.512071 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[259.523334 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[259.536312 0:34 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffe890
+[259.560598 0:34 starry_kernel::task::ops:448] Task(34, "busybox") exit with code: 0
+[259.569840 0:34 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[259.579637 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[259.590891 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_ffn800 ===
+[259.605534 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[259.616887 0:35 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec60
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_ffn800.cvimodel ===
+[260.121489 0:35 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[260.132713 0:35 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[260.144655 0:35 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[260.156185 0:35 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[260.324040 0:35 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reo[260.344732 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:17 bench_multi: version: 1.4.0
+[260.355577 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:17 bench_multi: act_ffn800 Build at 2026-05-29 10:26:34 For platform cv181x
+[260.370428 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: ion alloc failed, size = 59367568, ret=ffffffff
+pen ion dev success
+[260.386368 0:35 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[260.404215 0:35 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yyda/works[260.424688 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev
+[260.435511 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev success
+[260.447066 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: ion alloc failed, size = 59367568, ret=ffffffff
+[260.460864 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev
+[260.471706 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev success
+pace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(bmctx_t, size_t): Assertion `0.
+[260.497820 0:35 starry_kernel::task::signal:268] Send signal SIGABRT to thread 35
+[260.506766 0:35 starry_kernel::task::ops:448] Task(35, "bench_multi") exit with code: 134
+[260.516543 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: ion alloc failed, size = 59367568, ret=ffffffff
+[260.530307 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev
+[260.541146 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:04:17 bench_multi: reopen ion dev success
+[260.552705 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:04:17 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[260.723562 0:35 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[260.734192 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[260.747667 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== reclaim ion ===
+[260.762631 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[260.773905 0:36 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+[260.790746 0:36 starry_kernel::task::ops:448] Task(36, "busybox") exit with code: 0
+[260.799912 0:36 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[260.809738 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[260.820991 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[260.833986 0:37 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[260.850326 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[262.854056 0:37 starry_kernel::task::ops:448] Task(37, "busybox") exit with code: 0
+[262.863209 0:37 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[262.873067 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[262.884321 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+All done.
+[262.897213 0:13 starry_kernel::task::ops:448] Task(13, "busybox") exit with code: 0
+[263.037323 0:13 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[263.047082 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WUNTRACED)
+[263.058786 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG | WUNTRACED)
+root@starry:/root #
+
+
+
+=== Model: /tpu/models/act_ffn800.cvimodel ===
+[ 40.547687 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[ 40.558911 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[ 40.570821 0:15 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[ 40.582422 0:15 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[ 40.731829 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:00:37 bench_multi: version: 1.4.0
+[ 40.742527 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:00:37 bench_multi: act_ffn800 Build at 2026-05-29 10:26:34 For platform cv181x
+[ 40.764915 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 40.779126 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=7, handle=1, phys_addr=0x80f3f000, size=59367568
+[ 40.792930 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80f3f000, buffer_size=59367568, requested_length=59371520, map_le0
+[ 40.811602 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x327000, length=59371520
+[ 73.123253 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 73.133481 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=8, handle=2, phys_addr=0x848fd000, size=803904
+[ 73.147133 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x848fd000, buffer_size=803904, requested_length=806912, map_length2
+[ 73.162844 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x3c9f000, length=806912
+[ 73.305942 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:01:10 bench_multi: Max SharedMem size:1205248
+[ 73.384389 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 73.394689 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=5, handle=3, phys_addr=0x849c5000, size=1205248
+[ 73.408376 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x849c5000, buffer_size=1205248, requested_length=1208320, map_leng0
+[ 73.424379 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x3d64000, length=1208320
+[ 73.446431 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 73.456658 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=9, handle=4, phys_addr=0x84867000, size=602112
+[ 73.470310 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x84867000, buffer_size=602112, requested_length=602112, map_length2
+[ 73.486027 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x3bc6000, length=602112
+[ 73.497689 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 73.507847 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=10, handle=5, phys_addr=0x80ee2000, size=8
+[ 73.521199 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80ee2000, buffer_size=8, requested_length=4096, map_length=4096
+[ 73.536081 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x1000, length=4096
+[ 73.575049 0:15 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[ 73.585218 0:15 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=11, handle=6, phys_addr=0x84af8000, size=64
+[ 73.598659 0:15 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x84af8000, buffer_size=64, requested_length=4096, map_length=4096
+[ 73.613634 0:15 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x2000, length=4096
+M0 C0 69.2 -1.3359 -0.8281 -1.0859 -1.1094 -0.9609 -1.2656 -0.8359 -1.4062 -0.8320 -1.3594 -0.8047 -1.2969 -0.7852 -1.2500 -0.7305 -1.1406
+M0 C1 69.2 -1.3359 -0.8281 -1.0859 -1.1094 -0.9609 -1.2656 -0.8359 -1.4062 -0.8320 -1.3594 -0.8047 -1.2969 -0.7852 -1.2500 -0.7305 -1.1406
+M0 C2 69.1 -1.3359 -0.8281 -1.0859 -1.1094 -0.9609 -1.2656 -0.8359 -1.4062 -0.8320 -1.3594 -0.8047 -1.2969 -0.7852 -1.2500 -0.7305 -1.1406
+M0 C3 69.2 -1.3359 -0.8281 -1.0859 -1.1094 -0.9609 -1.2656 -0.8359 -1.4062 -0.8320 -1.3594 -0.8047 -1.2969 -0.7852 -1.2500 -0.7305 -1.1406
+M0 C4 69.1 -1.3359 -0.8281 -1.0859 -1.1094 -0.9609 -1.2656 -0.8359 -1.4062 -0.8320 -1.3594 -0.8047 -1.2969 -0.7852 -1.2500 -0.7305 -1.1406
+M0 C5 69.1 -0.3320 -1.6094 -0.6562 -1.3359 -0.7500 -1.3281 -0.9180 -1.1953 -0.9062 -1.1406 -0.8320 -1.1406 -0.6602 -1.2969 -0.5000 -1.2500
+M0 C6 69.2 -0.3320 -1.6094 -0.6562 -1.3359 -0.7500 -1.3281 -0.9180 -1.1953 -0.9062 -1.1406 -0.8320 -1.1406 -0.6602 -1.2969 -0.5000 -1.2500
+M0 C7 69.1 -0.3320 -1.6094 -0.6562 -1.3359 -0.7500 -1.3281 -0.9180 -1.1953 -0.9062 -1.1406 -0.8320 -1.1406 -0.6602 -1.2969 -0.5000 -1.2500
+M0 C8 69.2 -0.3320 -1.6094 -0.6562 -1.3359 -0.7500 -1.3281 -0.9180 -1.1953 -0.9062 -1.1406 -0.8320 -1.1406 -0.6602 -1.2969 -0.5000 -1.2500
+M0 C9 69.1 -0.3320 -1.6094 -0.6562 -1.3359 -0.7500 -1.3281 -0.9180 -1.1953 -0.9062 -1.1406 -0.8320 -1.1406 -0.6602 -1.2969 -0.5000 -1.2500
+M0 C10 69.2 -0.3379 -1.4219 -0.5312 -1.2344 -0.6016 -1.1875 -0.6953 -1.1250 -0.7461 -1.0391 -0.7031 -1.0078 -0.5977 -1.0156 -0.4102 -1.0391
+M0 C11 69.2 -0.2969 -1.4531 -0.4883 -1.2578 -0.5586 -1.2109 -0.6523 -1.1250 -0.7070 -1.0391 -0.6680 -1.0078 -0.5781 -1.0312 -0.3965 -1.0391
+M0 C12 69.1 -0.3340 -1.4141 -0.5039 -1.2578 -0.5742 -1.2109 -0.6719 -1.1484 -0.7383 -1.0391 -0.6875 -1.0000 -0.5977 -0.9883 -0.4297 -0.9492
+M0 C13 69.1 -0.3203 -1.3984 -0.4863 -1.2422 -0.5508 -1.1875 -0.6328 -1.1328 -0.6836 -1.0547 -0.6523 -1.0000 -0.5586 -1.0234 -0.3828 -1.0234
+M0 C14 69.1 -0.3027 -1.4062 -0.4512 -1.2266 -0.5195 -1.1797 -0.6016 -1.1094 -0.6562 -1.0469 -0.6211 -0.9883 -0.5430 -0.9883 -0.3887 -0.9648
+M0 C15 69.2 -0.2734 -1.4531 -0.4648 -1.2656 -0.5430 -1.2109 -0.6406 -1.1328 -0.6992 -1.0312 -0.6680 -0.9844 -0.5625 -1.0078 -0.3906 -1.0078
+M0 C16 69.1 -0.3242 -1.3984 -0.4785 -1.2344 -0.5352 -1.1953 -0.6289 -1.1094 -0.6992 -1.0234 -0.6562 -0.9922 -0.5898 -0.9883 -0.4277 -0.9492
+M0 C17 69.2 -0.2832 -1.4688 -0.4785 -1.2734 -0.5586 -1.2109 -0.6602 -1.1328 -0.7031 -1.0547 -0.6523 -1.0156 -0.5625 -1.0312 -0.3809 -1.0547
+M0 C18 69.1 -0.3516 -1.3828 -0.5273 -1.2109 -0.5820 -1.1875 -0.6562 -1.1328 -0.7344 -1.0234 -0.6875 -0.9727 -0.5898 -0.9844 -0.4238 -0.9844
+M0 C19 69.1 -0.2988 -1.4375 -0.4629 -1.2734 -0.5312 -1.2266 -0.6211 -1.1562 -0.6836 -1.0703 -0.6484 -1.0156 -0.5664 -1.0234 -0.3945 -1.0156
+M0 C20 69.1 -0.7188 -1.0391 -0.7070 -1.0312 -0.7070 -1.0078 -0.6875 -1.0234 -0.6719 -0.9727 -0.6289 -0.9297 -0.5547 -0.9180 -0.4512 -0.8398
+M0 C21 69.2 -1.0703 -0.8672 -0.9531 -1.0078 -0.8477 -1.1484 -0.7969 -1.1953 -0.7812 -1.1484 -0.7617 -1.0859 -0.6836 -1.0312 -0.5938 -0.9258
+M0 C22 69.2 1.9453 1.4844 1.8281 1.5156 1.7578 1.4766 1.6016 1.3125 1.1016 0.9453 0.4414 0.4531 0.1147 0.1260 -0.2695 0.0796
+M0 C23 69.1 -1.9141 0.0918 -1.1328 -0.6719 -0.7578 -1.0859 -0.5898 -1.2656 -0.5195 -1.2656 -0.4707 -1.2344 -0.4980 -1.1406 -0.4805 -1.0234
+M0 C24 69.1 -0.5664 -1.1797 -0.6250 -1.1562 -0.6680 -1.1328 -0.6953 -1.1172 -0.7109 -1.0625 -0.6602 -0.9961 -0.5820 -0.9844 -0.4648 -0.9062
+M0 C25 69.1 -0.9883 -0.9922 -0.9297 -1.0625 -0.8594 -1.1641 -0.8164 -1.2109 -0.8047 -1.1719 -0.7812 -1.1094 -0.7031 -1.0938 -0.5898 -1.0156
+M0 C26 69.2 1.5156 1.2031 0.9805 0.8047 0.6523 0.5273 0.2969 0.1250 -0.1504 -0.0461 -0.3164 -0.1582 -0.5703 -0.3691 -0.5430 -0.3926
+M0 C27 69.1 1.7500 1.2266 1.4922 1.1953 1.0859 0.8789 0.9414 0.6602 0.1177 0.1055 -0.3047 0.0084 -0.6094 -0.2969 -0.4961 -0.1914
+M0 C28 69.1 -0.6602 -1.1406 -0.6914 -1.1406 -0.7148 -1.1328 -0.7344 -1.1094 -0.7461 -1.0391 -0.7109 -0.9844 -0.6250 -0.9766 -0.5078 -0.9023
+M0 C29 69.2 -1.2969 -0.3105 -0.8047 -0.5938 -0.5547 -0.8008 -0.4160 -0.9102 -0.3770 -0.9102 -0.3418 -0.8789 -0.3301 -0.7891 -0.3066 -0.6641
+M0 C30 69.2 -0.7031 -1.0078 -0.6992 -1.0078 -0.6953 -1.0078 -0.6719 -1.0312 -0.6719 -0.9805 -0.6328 -0.9375 -0.5469 -0.9258 -0.4375 -0.8398
+M0 C31 69.1 -1.2344 -0.7930 -1.0859 -0.9609 -0.9727 -1.1250 -0.8320 -1.2422 -0.8320 -1.2031 -0.8281 -1.1406 -0.7656 -1.1250 -0.6602 -1.0547
+M0 C32 69.1 -0.5547 -0.9648 -0.5703 -0.9648 -0.5898 -0.9492 -0.5938 -0.9531 -0.5898 -0.8945 -0.5469 -0.8398 -0.4609 -0.8320 -0.3359 -0.7422
+M0 C33 69.1 -0.3809 -1.0859 -0.4551 -1.0312 -0.4961 -1.0156 -0.5273 -1.0000 -0.5703 -0.9453 -0.5391 -0.8906 -0.4707 -0.8750 -0.3418 -0.7969
+M0 C34 69.2 -0.6953 -1.1641 -0.7500 -1.1484 -0.8008 -1.1172 -0.8242 -1.1016 -0.8320 -1.0469 -0.7969 -1.0000 -0.7070 -0.9922 -0.5898 -0.9336
+M0 C35 69.1 1.4531 0.7812 1.1875 0.7461 1.0625 0.6719 0.7422 0.3418 0.0708 -0.1299 -0.2969 -0.2197 -0.4902 -0.4180 -0.3984 -0.3320
+M0 C36 69.1 -0.0815 -1.7109 -0.3633 -1.4297 -0.4512 -1.3828 -0.6289 -1.2109 -0.7188 -1.0469 -0.6875 -0.9961 -0.5664 -1.0547 -0.3926 -1.0469
+M0 C37 69.2 -0.7461 -1.0312 -0.7539 -1.0078 -0.7578 -0.9844 -0.7461 -1.0000 -0.7305 -0.9648 -0.6797 -0.9297 -0.6016 -0.9141 -0.4941 -0.8359
+M0 C38 69.2 -0.5078 -1.3906 -0.6367 -1.2734 -0.6914 -1.2422 -0.7773 -1.1406 -0.8125 -1.0703 -0.7656 -1.0391 -0.6797 -1.0391 -0.5430 -1.0156
+M0 C39 69.1 -1.9922 0.0491 -1.3438 -0.6328 -1.0547 -0.9922 -0.7344 -1.2812 -0.6875 -1.2656 -0.6289 -1.2344 -0.6797 -1.1797 -0.6875 -1.0000
+M0 C40 69.1 -1.9453 0.1016 -1.2266 -0.6055 -0.9414 -0.9453 -0.6758 -1.2188 -0.6133 -1.2109 -0.5391 -1.1562 -0.5586 -1.1016 -0.5508 -0.9961
+M0 C41 69.1 -0.8633 -0.0131 -0.5977 -0.2480 -0.2969 -0.2891 -0.2012 -0.4375 -0.2363 -0.4707 -0.2129 -0.4609 -0.2754 -0.4551 -0.3379 -0.3516
+M0 C42 69.2 1.5859 1.3750 0.7812 0.7969 0.7188 0.7266 0.3184 0.2188 -0.0864 0.0801 -0.4219 0.0400 -0.8281 -0.2988 -0.7461 -0.2314
+M0 C43 69.2 0.2031 -0.9102 -0.0281 -0.7266 -0.0889 -0.6719 -0.0830 -0.6016 -0.2344 -0.5742 -0.2539 -0.5898 -0.2559 -0.6133 -0.1592 -0.5742
+M0 C44 69.1 -0.6172 -0.1475 -0.1973 -0.2295 -0.0393 -0.2373 0.0952 -0.2812 -0.0135 -0.4785 -0.0281 -0.5469 -0.1387 -0.6055 -0.0869 -0.4395
+M0 C45 69.1 -1.9141 -0.0352 -1.2891 -0.6914 -0.9883 -1.0625 -0.6953 -1.3359 -0.6641 -1.3047 -0.6719 -1.2500 -0.6602 -1.1875 -0.6289 -1.0547
+M0 C46 69.1 -0.8242 -1.0078 -0.7930 -1.0312 -0.7656 -1.0859 -0.7383 -1.1250 -0.7188 -1.0781 -0.6875 -1.0391 -0.6016 -1.0156 -0.4961 -0.9336
+M0 C47 69.2 -0.1235 -1.5781 -0.3379 -1.3359 -0.4434 -1.2188 -0.6055 -1.0703 -0.6445 -1.0078 -0.5898 -0.9805 -0.5273 -0.9766 -0.3750 -0.9453
+M0 C48 69.2 -1.8672 -0.0574 -1.2656 -0.6992 -0.9648 -1.0625 -0.6992 -1.3125 -0.6562 -1.3047 -0.6523 -1.2578 -0.6445 -1.2109 -0.6211 -1.0625
+M0 C49 69.1 -0.7422 -1.0391 -0.7578 -1.0547 -0.7500 -1.0547 -0.7422 -1.0703 -0.7383 -1.0234 -0.6992 -0.9844 -0.6094 -0.9648 -0.5039 -0.8906
+M0 C50 69.1 1.8672 2.1406 0.5703 0.5469 0.2793 -0.0320 -0.2334 -0.5586 -0.5312 -0.5195 -0.9688 -0.3574 -0.9609 -0.2334 -0.9062 0.0708
+M0 C51 69.1 -2.1719 0.2217 -1.3203 -0.7656 -0.9883 -1.1641 -0.6445 -1.4922 -0.6367 -1.4531 -0.5781 -1.4141 -0.6758 -1.2500 -0.6484 -1.1328
+M0 C52 69.2 -0.8828 -1.1328 -0.8828 -1.1406 -0.9023 -1.1406 -0.9375 -1.1406 -0.9258 -1.0938 -0.8750 -1.0625 -0.7969 -1.0703 -0.6875 -1.0078
+M0 C53 69.2 -1.5625 -0.6328 -1.2266 -1.0547 -1.0312 -1.3203 -0.8047 -1.5391 -0.8359 -1.4688 -0.8242 -1.4219 -0.7891 -1.3750 -0.7305 -1.2812
+M0 C54 69.1 -2.2656 0.3730 -1.4141 -0.6758 -1.0703 -1.1250 -0.6367 -1.4922 -0.6289 -1.4531 -0.5859 -1.3984 -0.6914 -1.2266 -0.6680 -1.0938
+M0 C55 69.1 -1.3438 -0.4277 -0.9961 -0.8203 -0.8477 -0.9688 -0.7656 -1.0703 -0.7305 -1.0625 -0.7148 -1.0391 -0.7109 -1.0078 -0.6406 -0.8789
+M0 C56 69.1 -2.2500 0.3340 -1.3906 -0.7344 -1.0547 -1.2031 -0.6250 -1.5312 -0.6211 -1.5078 -0.6641 -1.4531 -0.6641 -1.3438 -0.6406 -1.2266
+M0 C57 69.2 -2.2031 0.2266 -1.3984 -0.7578 -1.0781 -1.2188 -0.6602 -1.5469 -0.6602 -1.5234 -0.7109 -1.4375 -0.7266 -1.3281 -0.6875 -1.2109
+M0 C58 69.2 1.1797 2.0625 0.0152 0.1855 -0.2412 -0.3613 -0.4961 -0.6406 -0.6016 -0.6797 -0.9023 -0.6797 -0.9062 -0.7148 -0.9375 -0.4727
+M0 C59 69.1 -2.1719 0.1924 -1.3906 -0.7891 -1.0859 -1.2188 -0.6758 -1.5547 -0.6641 -1.5078 -0.7148 -1.4531 -0.7227 -1.3359 -0.6797 -1.2266
+M0 C60 69.1 -1.0391 -0.0500 -0.7539 -0.5859 -0.6289 -0.6992 -0.6992 -0.8359 -0.6836 -0.8789 -0.7070 -0.8945 -0.6875 -0.9219 -0.6445 -0.7930
+M0 C61 69.1 -0.3242 -1.7109 -0.6055 -1.4453 -0.6797 -1.4297 -0.8242 -1.2969 -0.8359 -1.2188 -0.7500 -1.2188 -0.5898 -1.3203 -0.4160 -1.3281
+M0 C62 69.2 -2.2656 0.3887 -1.3984 -0.6992 -1.0703 -1.1641 -0.6211 -1.5156 -0.6172 -1.4844 -0.6602 -1.4062 -0.6758 -1.2891 -0.6484 -1.1484
+M0 C63 69.2 2.0000 2.1094 0.7109 0.7773 0.3203 0.2988 -0.5156 -0.3945 -0.8164 -0.2832 -1.2031 -0.1494 -1.1250 0.0566 -1.1250 0.3066
+M0 C64 69.1 1.1094 1.9922 -0.1108 0.1338 -0.3438 -0.3613 -0.5703 -0.6094 -0.6641 -0.6562 -0.9102 -0.6562 -0.9336 -0.6953 -0.9805 -0.4727
+M0 C65 69.1 1.2344 2.1094 0.0309 0.2324 -0.2256 -0.3516 -0.4883 -0.6602 -0.6406 -0.6641 -0.8984 -0.6406 -0.9375 -0.6875 -0.9844 -0.4258
+M0 C66 69.1 1.9297 1.8125 1.3672 1.3203 1.0938 0.7266 0.3906 -0.1367 -0.1592 -0.2188 -0.7656 -0.4648 -0.6328 -0.2793 -0.6445 0.1719
+M0 C67 69.2 -1.7344 -0.4355 -1.2812 -0.9766 -1.0625 -1.2812 -0.8008 -1.5312 -0.7969 -1.4844 -0.8047 -1.4375 -0.7852 -1.3828 -0.7266 -1.2969
+M0 C68 69.2 -0.8242 -1.1797 -0.8398 -1.1953 -0.8672 -1.1875 -0.9023 -1.1719 -0.8945 -1.1328 -0.8477 -1.1016 -0.7695 -1.1094 -0.6602 -1.0625
+M0 C69 69.1 -1.5234 -0.5000 -1.1172 -0.8867 -0.9766 -1.0859 -0.8086 -1.2188 -0.7891 -1.1797 -0.7500 -1.1719 -0.7539 -1.1250 -0.6797 -1.0234
+M0 C70 69.1 -2.1094 0.2871 -1.2656 -0.5391 -0.9062 -0.9531 -0.6133 -1.2500 -0.5625 -1.2344 -0.4961 -1.1953 -0.5312 -1.1094 -0.5156 -0.9844
+M0 C71 69.1 -0.6289 -1.1484 -0.6602 -1.1406 -0.7031 -1.1016 -0.7188 -1.0938 -0.7266 -1.0391 -0.6914 -0.9922 -0.6094 -0.9805 -0.5000 -0.9023
+M0 C72 69.2 -0.0182 -1.5938 -0.2754 -1.3359 -0.3418 -1.2812 -0.4668 -1.1719 -0.6055 -0.9805 -0.5859 -0.9336 -0.4844 -0.9727 -0.3398 -0.9414
+M0 C73 69.2 -0.1177 -1.6875 -0.3379 -1.4453 -0.4160 -1.3906 -0.6055 -1.1953 -0.6797 -1.0703 -0.6211 -1.0469 -0.5312 -1.0469 -0.3867 -0.9922
+M0 C74 69.1 -0.2002 -1.6250 -0.4727 -1.3672 -0.5469 -1.3281 -0.6758 -1.1953 -0.7305 -1.0859 -0.6719 -1.0391 -0.5312 -1.1172 -0.3711 -1.0781
+M0 C75 69.1 -0.2793 -1.6094 -0.4844 -1.3984 -0.5547 -1.3516 -0.6953 -1.2031 -0.7578 -1.1016 -0.6992 -1.0469 -0.5977 -1.0703 -0.4473 -1.0156
+M0 C76 69.1 -1.9141 0.0425 -1.2344 -0.6641 -0.9180 -1.0078 -0.6680 -1.2969 -0.5859 -1.2891 -0.5156 -1.2578 -0.5234 -1.1719 -0.5195 -1.0234
+M0 C77 69.2 -1.0703 -0.9609 -1.0469 -1.0156 -0.9766 -1.1094 -0.9297 -1.1641 -0.9219 -1.1250 -0.8867 -1.0703 -0.8086 -1.0625 -0.6953 -1.0000
+M0 C78 69.2 -0.7461 -1.0547 -0.7617 -1.0547 -0.7656 -1.0312 -0.7578 -1.0391 -0.7578 -1.0078 -0.7148 -0.9727 -0.6328 -0.9531 -0.5234 -0.8828
+M0 C79 69.1 1.7578 1.0234 1.5156 1.1094 1.1406 0.8125 1.0781 0.5742 0.0221 -0.1118 -0.4258 -0.1123 -0.6797 -0.3633 -0.6211 -0.0884
+M0 C80 69.1 1.2031 0.0143 0.5703 -0.0149 0.1396 -0.3047 0.1338 -0.3672 -0.4043 -0.5039 -0.7109 -0.4277 -0.7070 -0.5508 -0.5820 -0.3730
+M0 C81 69.1 -1.5781 -0.5000 -1.2500 -0.8555 -1.0469 -1.1250 -0.8359 -1.3359 -0.8047 -1.2891 -0.8281 -1.2188 -0.7695 -1.1953 -0.6836 -1.1094
+M0 C82 69.2 -0.6680 0.1992 0.0398 0.2402 0.2227 0.2559 0.1943 0.0742 0.0449 -0.2285 -0.0566 -0.3867 -0.2227 -0.4961 -0.3164 -0.3906
+M0 C83 69.2 -1.7578 -0.0176 -1.0938 -0.6445 -0.7773 -0.9961 -0.5977 -1.2109 -0.5039 -1.2031 -0.4414 -1.1562 -0.4414 -1.0625 -0.4434 -0.9023
+M0 C84 69.1 -0.6836 -1.0312 -0.6914 -1.0234 -0.6953 -1.0000 -0.6797 -1.0078 -0.6836 -0.9766 -0.6367 -0.9336 -0.5586 -0.9258 -0.4512 -0.8555
+M0 C85 69.1 1.9688 1.8438 1.4531 1.4062 1.2031 0.8320 0.5156 -0.0752 -0.1133 -0.1729 -0.7852 -0.3945 -0.5898 -0.0898 -0.6875 0.2969
+M0 C86 69.1 1.6719 2.2969 0.1738 0.5742 -0.1387 -0.0649 -0.5117 -0.4844 -0.6797 -0.4844 -1.1172 -0.4043 -1.1562 -0.3086 -1.5781 0.1543
+M0 C87 69.2 1.3438 0.7109 0.2656 -0.0620 -0.0938 -0.4395 -0.3867 -0.7148 -0.6680 -0.6680 -1.0234 -0.6445 -0.9922 -0.5547 -1.0156 -0.3633
+M0 C88 69.2 -0.4199 -1.6484 -0.6953 -1.3906 -0.7617 -1.3750 -0.8945 -1.2812 -0.9062 -1.2031 -0.8164 -1.2031 -0.6680 -1.2812 -0.4980 -1.2656
+M0 C89 69.1 -1.7812 -0.4570 -1.4141 -0.9062 -1.2188 -1.2188 -0.9492 -1.4609 -0.9375 -1.4297 -0.9570 -1.3516 -0.9375 -1.3047 -0.8672 -1.2188
+M0 C90 69.1 -0.2910 -1.6328 -0.6094 -1.3750 -0.6914 -1.3594 -0.8359 -1.2578 -0.8594 -1.1719 -0.7852 -1.1797 -0.6328 -1.2812 -0.4570 -1.2578
+M0 C91 69.1 1.8750 1.6016 1.1250 1.0469 0.8242 0.3906 0.2832 -0.3418 -0.2363 -0.4375 -0.8125 -0.5156 -0.6758 -0.3926 -0.7930 -0.0527
+M0 C92 69.2 -0.6367 -1.5312 -0.8398 -1.3281 -0.8945 -1.3203 -0.9766 -1.2578 -0.9688 -1.1953 -0.8906 -1.1953 -0.7656 -1.2578 -0.6172 -1.2344
+M0 C93 69.2 -1.9609 -0.1797 -1.3906 -0.7773 -1.1328 -1.0859 -0.8789 -1.3281 -0.8359 -1.2891 -0.7852 -1.2656 -0.8555 -1.1562 -0.7969 -1.0469
+M0 C94 69.1 1.2969 2.1250 -0.0732 0.3730 -0.3398 -0.1289 -0.6172 -0.4395 -0.7305 -0.5078 -0.9922 -0.5234 -1.0078 -0.4824 -1.3125 -0.0708
+M0 C95 69.1 2.0625 1.9297 1.5625 1.5781 1.1484 1.0156 0.5859 0.2500 -0.2393 -0.1934 -0.9102 -0.3027 -0.7852 0.0972 -1.0234 0.3691
+M0 C96 69.1 -0.8438 -1.3125 -0.9375 -1.2266 -0.9805 -1.2109 -1.0391 -1.1797 -1.0234 -1.1328 -0.9609 -1.1250 -0.8711 -1.1562 -0.7344 -1.1250
+M0 C97 69.2 0.4355 -1.2422 -0.2559 -1.1328 -0.4551 -1.1328 -0.6484 -1.1719 -0.7969 -1.0156 -0.8750 -0.9844 -0.7305 -0.9844 -0.5391 -0.8750
+M0 C98 69.2 1.1641 0.4062 -0.0017 -0.3223 -0.2637 -0.5391 -0.4902 -0.7344 -0.7461 -0.7227 -1.0703 -0.6406 -1.0234 -0.5625 -0.9844 -0.4121
+M0 C99 69.1 -0.7305 -1.4219 -0.8672 -1.2891 -0.9180 -1.2812 -0.9844 -1.2266 -0.9766 -1.1875 -0.8984 -1.1797 -0.7930 -1.2266 -0.6562 -1.2031
+  Avg: 69.16 ms, Total: 6915.82 ms
+Done.
+[130.141391 0:15 starry_kernel::task::ops:448] Task(15, "bench_multi") exit with code: 0
+[130.151104 0:15 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[130.164210 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.175466 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[130.213856 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[130.225129 0:16 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[131.255628 0:16 starry_kernel::task::ops:448] Task(16, "busybox") exit with code: 0
+[131.264783 0:16 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[131.274641 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[131.285896 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[131.298859 0:17 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec10
+[131.318480 0:17 starry_kernel::task::ops:448] Task(17, "busybox") exit with code: 0
+[131.327720 0:17 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[131.337517 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[131.348770 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc1 ===
+[131.363367 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[131.374625 0:18 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc1.cvimodel ===
+[131.859440 0:18 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[131.870664 0:18 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[131.882574 0:18 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[131.894175 0:18 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[132.042832 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:02:08 bench_multi: version: 1.4.0
+[132.053530 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:02:08 bench_multi: act_enc1 Build at 2026-05-29 10:26:00 For platform cv181x
+[132.077743 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[132.092860 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=7, handle=7, phys_addr=0x84af9000, size=72732304
+[132.106657 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x84af9000, buffer_size=72732304, requested_length=72732672, map_le2
+[132.125926 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x327000, length=72732672
+[175.548115 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[175.558342 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=8, handle=8, phys_addr=0x890d0000, size=761600
+[175.572038 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x890d0000, buffer_size=761600, requested_length=761856, map_length6
+[175.587710 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x4951000, length=761856
+[175.627929 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:02:52 bench_multi: Max SharedMem size:1205248
+[175.866707 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[175.877008 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=5, handle=9, phys_addr=0x8918e000, size=1205248
+[175.890676 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8918e000, buffer_size=1205248, requested_length=1208320, map_leng0
+[175.906661 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x4a0b000, length=1208320
+[175.929219 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[175.939478 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=9, handle=10, phys_addr=0x892b5000, size=602112
+[175.953189 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x892b5000, buffer_size=602112, requested_length=602112, map_length2
+[175.968899 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x4884000, length=602112
+[175.980568 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[175.990753 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=10, handle=11, phys_addr=0x80ee4000, size=8
+[176.004170 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80ee4000, buffer_size=8, requested_length=4096, map_length=4096
+[176.019032 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x1000, length=4096
+[176.051057 0:18 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[176.061229 0:18 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=11, handle=12, phys_addr=0x84823000, size=64
+[176.074755 0:18 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x84823000, buffer_size=64, requested_length=4096, map_length=4096
+[176.089710 0:18 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x2000, length=4096
+M0 C0 66.9 -0.9062 -0.2109 -0.6250 -0.4688 -0.3984 -0.6797 -0.4258 -0.6680 -0.4883 -0.6172 -0.4902 -0.6016 -0.4824 -0.5859 -0.4395 -0.5820
+M0 C1 66.9 -0.9062 -0.2109 -0.6250 -0.4688 -0.3984 -0.6797 -0.4258 -0.6680 -0.4883 -0.6172 -0.4902 -0.6016 -0.4824 -0.5859 -0.4395 -0.5820
+M0 C2 66.9 -0.9062 -0.2109 -0.6250 -0.4688 -0.3984 -0.6797 -0.4258 -0.6680 -0.4883 -0.6172 -0.4902 -0.6016 -0.4824 -0.5859 -0.4395 -0.5820
+M0 C3 67.0 -0.9062 -0.2109 -0.6250 -0.4688 -0.3984 -0.6797 -0.4258 -0.6680 -0.4883 -0.6172 -0.4902 -0.6016 -0.4824 -0.5859 -0.4395 -0.5820
+M0 C4 66.9 -0.9062 -0.2109 -0.6250 -0.4688 -0.3984 -0.6797 -0.4258 -0.6680 -0.4883 -0.6172 -0.4902 -0.6016 -0.4824 -0.5859 -0.4395 -0.5820
+M0 C5 66.9 0.5000 -1.6406 0.0728 -1.1406 0.0173 -1.0703 -0.2139 -0.8125 -0.3203 -0.7266 -0.4023 -0.6289 -0.2383 -0.8164 -0.2031 -0.8164
+M0 C6 66.9 0.5000 -1.6406 0.0728 -1.1406 0.0173 -1.0703 -0.2139 -0.8125 -0.3203 -0.7266 -0.4023 -0.6289 -0.2383 -0.8164 -0.2031 -0.8164
+M0 C7 66.9 0.5000 -1.6406 0.0728 -1.1406 0.0173 -1.0703 -0.2139 -0.8125 -0.3203 -0.7266 -0.4023 -0.6289 -0.2383 -0.8164 -0.2031 -0.8164
+M0 C8 67.0 0.5000 -1.6406 0.0728 -1.1406 0.0173 -1.0703 -0.2139 -0.8125 -0.3203 -0.7266 -0.4023 -0.6289 -0.2383 -0.8164 -0.2031 -0.8164
+M0 C9 66.9 0.5000 -1.6406 0.0728 -1.1406 0.0173 -1.0703 -0.2139 -0.8125 -0.3203 -0.7266 -0.4023 -0.6289 -0.2383 -0.8164 -0.2031 -0.8164
+M0 C10 66.9 0.5391 -1.5781 0.1777 -1.1562 0.0933 -1.0469 -0.2002 -0.7500 -0.3867 -0.5664 -0.5039 -0.4219 -0.3633 -0.5469 -0.2930 -0.5742
+M0 C11 67.0 0.5586 -1.5859 0.2139 -1.1797 0.1079 -1.0312 -0.1963 -0.7305 -0.3594 -0.5742 -0.4766 -0.4355 -0.3496 -0.5430 -0.2773 -0.5781
+M0 C12 66.9 0.5547 -1.5859 0.1758 -1.1562 0.0566 -1.0156 -0.2578 -0.7031 -0.4336 -0.5273 -0.5000 -0.4297 -0.3926 -0.5195 -0.2949 -0.5625
+M0 C13 66.9 0.5547 -1.5781 0.1875 -1.1562 0.0669 -1.0078 -0.1943 -0.7422 -0.3457 -0.6016 -0.4805 -0.4336 -0.3711 -0.5312 -0.2754 -0.5820
+M0 C14 66.9 0.5664 -1.5781 0.2227 -1.1719 0.1172 -1.0312 -0.1475 -0.7656 -0.3184 -0.5977 -0.4688 -0.4316 -0.4004 -0.4844 -0.2734 -0.5742
+M0 C15 67.0 0.5703 -1.5938 0.2285 -1.1875 0.0757 -1.0000 -0.1494 -0.7773 -0.3340 -0.6016 -0.4883 -0.4258 -0.3789 -0.5195 -0.2871 -0.5664
+M0 C16 66.9 0.5625 -1.5781 0.2354 -1.1875 0.1572 -1.0781 -0.1553 -0.7695 -0.3828 -0.5469 -0.4941 -0.4082 -0.4141 -0.4746 -0.2871 -0.5547
+M0 C17 66.9 0.5703 -1.6016 0.2236 -1.1953 0.1230 -1.0547 -0.1514 -0.7773 -0.3477 -0.5859 -0.4785 -0.4355 -0.3633 -0.5430 -0.2754 -0.5820
+M0 C18 66.9 0.5273 -1.5547 0.1875 -1.1484 0.0977 -1.0312 -0.1787 -0.7539 -0.3867 -0.5469 -0.5039 -0.4102 -0.3770 -0.5195 -0.3027 -0.5508
+M0 C19 66.9 0.5703 -1.6016 0.2344 -1.1953 0.1240 -1.0625 -0.1562 -0.7734 -0.3711 -0.5742 -0.4824 -0.4355 -0.3633 -0.5273 -0.2754 -0.5781
+M0 C20 67.0 -0.1348 -0.8477 -0.3477 -0.6055 -0.3535 -0.5664 -0.4141 -0.5195 -0.4727 -0.4863 -0.4531 -0.4785 -0.4199 -0.4668 -0.3516 -0.4453
+M0 C21 66.9 -0.6602 -0.3828 -0.5898 -0.4434 -0.3809 -0.6172 -0.4297 -0.5938 -0.5352 -0.4961 -0.5391 -0.4570 -0.5117 -0.4531 -0.4512 -0.4434
+M0 C22 67.0 1.5078 1.3203 1.4375 1.2812 1.3516 1.2266 1.2500 1.1406 0.7344 0.6836 0.1992 0.1699 -0.0723 -0.1504 -0.2090 -0.2207
+M0 C23 66.9 -1.6484 0.6289 -0.8125 -0.0586 -0.4102 -0.3926 -0.2656 -0.5312 -0.3145 -0.5078 -0.2832 -0.5117 -0.3086 -0.4688 -0.2812 -0.4258
+M0 C24 66.9 0.3262 -1.3516 -0.0136 -0.9883 -0.0996 -0.8789 -0.3516 -0.6367 -0.4766 -0.5273 -0.4980 -0.4805 -0.4648 -0.4727 -0.3711 -0.4766
+M0 C25 66.9 -0.7031 -0.3750 -0.5977 -0.4551 -0.4551 -0.5938 -0.4180 -0.6367 -0.5039 -0.5703 -0.5000 -0.5391 -0.4766 -0.5391 -0.4121 -0.5312
+M0 C26 66.9 1.3281 1.1953 1.2344 1.0859 1.1719 1.0625 0.9727 0.8906 0.2617 0.2480 -0.3164 -0.2988 -0.3574 -0.3691 -0.3223 -0.3926
+M0 C27 67.0 1.4219 1.1719 1.3203 1.1562 1.2266 1.0859 1.0938 0.9805 0.4570 0.4121 -0.0327 -0.0457 -0.2295 -0.2949 -0.2656 -0.2891
+M0 C28 66.9 0.1826 -1.2031 -0.1553 -0.8555 -0.1895 -0.8008 -0.3867 -0.6055 -0.5117 -0.5000 -0.5039 -0.4844 -0.4590 -0.4980 -0.3535 -0.5312
+M0 C29 67.0 -1.0547 0.2129 -0.5312 -0.1387 -0.2334 -0.3066 -0.1816 -0.2207 -0.1934 -0.2197 -0.2334 -0.3203 -0.2402 -0.2754 -0.2344 -0.2539
+M0 C30 66.9 -0.1699 -0.7930 -0.3574 -0.5859 -0.3555 -0.5664 -0.3984 -0.5430 -0.4727 -0.4961 -0.4531 -0.4863 -0.4121 -0.4766 -0.3477 -0.4492
+M0 C31 67.0 -1.1094 -0.0264 -0.7734 -0.3066 -0.5781 -0.4961 -0.4531 -0.6250 -0.5508 -0.5508 -0.5312 -0.5352 -0.5078 -0.5430 -0.4648 -0.5273
+M0 C32 66.9 0.2021 -1.1562 -0.1016 -0.8164 -0.1504 -0.7422 -0.3184 -0.5938 -0.4590 -0.4668 -0.4512 -0.4434 -0.4023 -0.4395 -0.3086 -0.4434
+M0 C33 67.0 0.4551 -1.3906 0.0374 -0.9648 -0.0703 -0.8359 -0.2314 -0.6875 -0.4004 -0.5352 -0.4531 -0.4727 -0.4043 -0.4746 -0.3066 -0.4785
+M0 C34 66.9 0.1904 -1.2656 -0.1377 -0.9102 -0.2305 -0.7891 -0.4355 -0.6016 -0.5430 -0.5039 -0.5508 -0.4668 -0.5039 -0.4785 -0.4082 -0.5156
+M0 C35 66.9 1.3984 0.9883 1.2422 1.0000 1.1094 0.9023 0.9141 0.7383 0.3496 0.2559 -0.0986 -0.1582 -0.2402 -0.3516 -0.2832 -0.3691
+M0 C36 66.9 0.6211 -1.6562 0.2637 -1.2344 0.1689 -1.1250 -0.1006 -0.8320 -0.2910 -0.6445 -0.4668 -0.4434 -0.3262 -0.5781 -0.2412 -0.6250
+M0 C37 66.9 -0.1641 -0.8281 -0.4141 -0.5430 -0.4219 -0.5039 -0.4785 -0.4648 -0.5078 -0.4688 -0.4727 -0.4785 -0.4414 -0.4648 -0.3750 -0.4453
+M0 C38 66.9 0.3945 -1.4766 0.0625 -1.0938 -0.0369 -0.9609 -0.3223 -0.6758 -0.4629 -0.5469 -0.5117 -0.4746 -0.4355 -0.5391 -0.3457 -0.5820
+M0 C39 66.9 -1.6641 0.6016 -0.9414 0.0405 -0.5742 -0.2539 -0.3887 -0.5039 -0.3848 -0.4961 -0.3887 -0.4570 -0.4141 -0.4160 -0.3887 -0.3867
+M0 C40 66.9 -1.6250 0.6289 -0.8594 0.0272 -0.4922 -0.2793 -0.2852 -0.5273 -0.3457 -0.4688 -0.3125 -0.4434 -0.3457 -0.4004 -0.3105 -0.3672
+M0 C41 66.9 -0.4570 0.2246 0.0430 0.2578 0.3691 0.4844 -0.0408 0.0747 -0.0996 -0.0031 -0.1387 -0.0776 -0.1245 -0.0220 -0.2539 -0.1104
+M0 C42 66.9 1.2891 1.2812 1.2422 1.1641 1.1797 1.1328 1.0000 0.9883 0.3945 0.4570 -0.2197 -0.1377 -0.2637 -0.2119 -0.3320 -0.2559
+M0 C43 66.9 0.8633 -0.9531 0.5000 -0.4102 0.2754 -0.4023 0.1680 -0.3008 -0.2559 -0.3711 -0.4219 -0.4297 -0.3848 -0.4375 -0.2969 -0.4746
+M0 C44 66.9 -0.1533 0.2715 0.5781 0.5898 0.8242 0.7891 0.6445 0.6211 0.2139 0.1934 -0.1748 -0.2236 -0.2061 -0.2578 -0.2305 -0.2578
+M0 C45 67.0 -1.6797 0.5938 -0.9258 -0.0138 -0.5625 -0.3184 -0.2910 -0.6250 -0.3965 -0.5273 -0.3945 -0.4941 -0.4062 -0.4688 -0.3887 -0.4375
+M0 C46 66.9 -0.3945 -0.6133 -0.4668 -0.5312 -0.4023 -0.5820 -0.3984 -0.6055 -0.4844 -0.5430 -0.4707 -0.5234 -0.4355 -0.5195 -0.3828 -0.4922
+M0 C47 66.9 0.6484 -1.6406 0.3008 -1.2266 0.1562 -1.0391 -0.2158 -0.6680 -0.3398 -0.5469 -0.4375 -0.4375 -0.3809 -0.4707 -0.2490 -0.5664
+M0 C48 66.9 -1.6562 0.5781 -0.9102 -0.0297 -0.5547 -0.3320 -0.2930 -0.6211 -0.3828 -0.5469 -0.3906 -0.5000 -0.4023 -0.4863 -0.3789 -0.4512
+M0 C49 66.9 -0.2021 -0.7930 -0.4062 -0.5898 -0.3809 -0.5820 -0.4180 -0.5703 -0.5039 -0.5039 -0.4883 -0.4922 -0.4492 -0.4863 -0.3848 -0.4648
+M0 C50 67.0 1.3047 1.4688 0.8633 0.8477 0.5625 0.5039 0.0527 0.0835 -0.2217 -0.1748 -0.3926 -0.2988 -0.3477 -0.3145 -0.2773 -0.2295
+M0 C51 66.9 -1.7812 0.6641 -0.9375 -0.0432 -0.5391 -0.3828 -0.3770 -0.5078 -0.3691 -0.5430 -0.3203 -0.5391 -0.3789 -0.5352 -0.3730 -0.5039
+M0 C52 67.0 -0.2715 -0.8516 -0.4414 -0.6719 -0.4414 -0.6484 -0.4980 -0.6016 -0.5352 -0.5898 -0.5117 -0.5938 -0.4688 -0.6094 -0.3926 -0.6055
+M0 C53 66.9 -1.2656 0.1011 -0.7734 -0.3711 -0.5273 -0.5938 -0.3516 -0.7734 -0.5000 -0.6562 -0.4844 -0.6367 -0.4688 -0.6484 -0.4590 -0.6445
+M0 C54 66.9 -1.7734 0.7148 -1.0234 0.0713 -0.5938 -0.3184 -0.4219 -0.5000 -0.3867 -0.5430 -0.3516 -0.5234 -0.4102 -0.5039 -0.4141 -0.4707
+M0 C55 66.9 -0.8281 -0.0967 -0.5820 -0.3223 -0.4590 -0.4043 -0.4844 -0.3887 -0.4590 -0.3887 -0.4570 -0.4043 -0.4336 -0.4414 -0.3613 -0.4004
+M0 C56 66.9 -1.7031 0.7070 -1.0234 0.0588 -0.6055 -0.3379 -0.4277 -0.5273 -0.4102 -0.5469 -0.3984 -0.5352 -0.4062 -0.5391 -0.4180 -0.5078
+M0 C57 66.9 -1.7344 0.6680 -1.0156 0.0211 -0.6172 -0.3398 -0.4297 -0.5625 -0.4355 -0.5625 -0.4277 -0.5391 -0.4316 -0.5352 -0.4336 -0.5078
+M0 C58 66.9 0.9102 1.2969 0.1729 0.3223 0.1270 0.2578 -0.1709 0.0282 -0.2109 -0.0061 -0.3965 -0.2598 -0.3848 -0.3008 -0.3418 -0.2793
+M0 C59 66.9 -1.7422 0.6602 -0.9844 -0.0110 -0.6094 -0.3477 -0.4375 -0.5469 -0.4492 -0.5508 -0.4355 -0.5273 -0.4375 -0.5312 -0.4375 -0.5078
+M0 C60 66.9 -0.1787 0.5312 -0.2324 -0.0069 -0.1484 -0.0374 -0.3242 -0.1299 -0.3848 -0.2500 -0.4375 -0.3340 -0.4238 -0.3945 -0.3691 -0.3594
+M0 C61 67.0 0.4746 -1.6172 0.1484 -1.2109 0.1416 -1.1875 -0.0020 -1.0234 -0.1523 -0.8828 -0.2500 -0.7617 -0.1748 -0.8398 -0.1348 -0.8438
+M0 C62 66.9 -1.7031 0.7305 -1.0312 0.0742 -0.5977 -0.3105 -0.4219 -0.5117 -0.4023 -0.5352 -0.4004 -0.5195 -0.4160 -0.5117 -0.4258 -0.4805
+M0 C63 66.9 1.3438 1.4688 1.0703 0.9961 0.6914 0.5469 0.1699 0.1167 -0.2422 -0.2617 -0.4473 -0.3594 -0.3711 -0.3496 -0.3379 -0.2969
+M0 C64 66.9 0.9062 1.2969 0.1338 0.3223 0.0679 0.2451 -0.2363 -0.0039 -0.2344 0.0030 -0.4023 -0.2422 -0.3867 -0.2910 -0.3516 -0.2695
+M0 C65 66.9 1.0234 1.3984 0.3652 0.5039 0.1855 0.3047 -0.1494 0.0288 -0.2285 -0.0315 -0.4141 -0.2695 -0.3887 -0.3125 -0.3340 -0.2773
+M0 C66 67.0 1.4219 1.3594 1.0469 0.9297 0.7070 0.4902 0.2373 0.0049 -0.2656 -0.3809 -0.4551 -0.5039 -0.4238 -0.4902 -0.3535 -0.3242
+M0 C67 66.9 -1.4766 0.3281 -0.8203 -0.2812 -0.5898 -0.4941 -0.4082 -0.6719 -0.4922 -0.6133 -0.4805 -0.5977 -0.4648 -0.6133 -0.4668 -0.5938
+M0 C68 66.9 -0.1650 -0.9609 -0.3887 -0.7227 -0.3848 -0.7109 -0.4766 -0.6445 -0.5195 -0.6172 -0.4961 -0.6172 -0.4531 -0.6328 -0.3633 -0.6484
+M0 C69 66.9 -0.9727 -0.0214 -0.6562 -0.3086 -0.4707 -0.4551 -0.4609 -0.4824 -0.4902 -0.4863 -0.4648 -0.4863 -0.4258 -0.5078 -0.3672 -0.4688
+M0 C70 66.9 -1.6562 0.6875 -0.8945 0.0645 -0.4883 -0.2773 -0.2969 -0.4863 -0.3145 -0.4648 -0.3027 -0.4629 -0.3262 -0.4141 -0.3047 -0.3672
+M0 C71 66.9 0.2168 -1.2734 -0.0610 -0.9688 -0.1680 -0.8281 -0.3848 -0.6211 -0.5117 -0.5156 -0.5117 -0.4863 -0.4746 -0.4863 -0.3867 -0.4922
+M0 C72 66.9 0.6602 -1.6172 0.3398 -1.2266 0.2539 -1.0938 0.0488 -0.8789 -0.2598 -0.5820 -0.4219 -0.4082 -0.2930 -0.5234 -0.2031 -0.5742
+M0 C73 66.9 0.6094 -1.6562 0.2773 -1.2500 0.1318 -1.0625 -0.1689 -0.7539 -0.3145 -0.6094 -0.4258 -0.4766 -0.3848 -0.4844 -0.2715 -0.5430
+M0 C74 66.9 0.5352 -1.6016 0.2432 -1.2188 0.2070 -1.1406 0.0036 -0.9219 -0.2246 -0.7031 -0.3809 -0.5195 -0.2871 -0.6211 -0.2383 -0.6250
+M0 C75 67.0 0.5195 -1.6016 0.1963 -1.2031 0.1182 -1.0859 -0.1660 -0.7852 -0.3418 -0.6211 -0.4551 -0.4824 -0.3672 -0.5508 -0.2812 -0.5977
+M0 C76 66.9 -1.6406 0.6094 -0.8789 0.0028 -0.4961 -0.3066 -0.3105 -0.5430 -0.3164 -0.5312 -0.3223 -0.4941 -0.3418 -0.4512 -0.3145 -0.4062
+M0 C77 66.9 -0.7578 -0.3730 -0.7227 -0.3867 -0.5586 -0.5312 -0.5117 -0.5938 -0.6172 -0.5156 -0.6055 -0.4844 -0.5703 -0.5039 -0.5117 -0.5117
+M0 C78 66.9 -0.1611 -0.8477 -0.3926 -0.6094 -0.4004 -0.5586 -0.4629 -0.5234 -0.5156 -0.4941 -0.4961 -0.4902 -0.4551 -0.4863 -0.3848 -0.4668
+M0 C79 66.9 1.4453 1.0703 1.3203 1.1250 1.2500 1.0781 1.1562 0.9883 0.4336 0.3555 -0.0854 -0.0703 -0.3398 -0.3555 -0.3535 -0.2969
+M0 C80 66.9 1.3203 0.4883 0.9961 0.6602 0.8984 0.6680 0.7773 0.6016 0.0703 -0.0082 -0.3223 -0.3672 -0.3379 -0.4297 -0.3184 -0.4121
+M0 C81 66.9 -1.4297 0.2891 -0.8828 -0.1699 -0.6172 -0.4004 -0.3496 -0.6797 -0.5156 -0.5508 -0.5039 -0.5156 -0.4922 -0.5156 -0.4570 -0.5039
+M0 C82 67.0 0.3496 0.8555 0.8086 0.8984 1.0000 1.0625 0.8281 0.8945 0.3379 0.4141 -0.0383 0.0303 -0.0850 -0.0378 -0.1758 -0.1167
+M0 C83 66.9 -1.5781 0.5859 -0.8086 -0.0386 -0.4414 -0.3164 -0.2871 -0.5156 -0.2910 -0.4824 -0.2754 -0.4766 -0.2969 -0.4336 -0.2734 -0.3945
+M0 C84 66.9 -0.0996 -0.8594 -0.3359 -0.6133 -0.3438 -0.5664 -0.4082 -0.5273 -0.4707 -0.4883 -0.4531 -0.4805 -0.4121 -0.4766 -0.3438 -0.4551
+M0 C85 66.9 1.4375 1.3672 1.0547 0.9492 0.7383 0.5117 0.2363 -0.0220 -0.2695 -0.3750 -0.4609 -0.5352 -0.4238 -0.4805 -0.3516 -0.3027
+M0 C86 66.9 1.1953 1.5000 0.5547 0.7969 0.2793 0.5352 -0.2598 0.0962 -0.3809 0.0112 -0.4766 -0.1289 -0.3750 -0.1143 -0.3086 -0.0249
+M0 C87 67.0 1.3750 0.7539 0.7734 0.3770 0.4121 -0.1074 0.1050 -0.5820 -0.3242 -0.6211 -0.4824 -0.6133 -0.4590 -0.5898 -0.4414 -0.5078
+M0 C88 66.9 0.4180 -1.5625 0.1079 -1.1953 0.1025 -1.1641 -0.0132 -1.0312 -0.1738 -0.8750 -0.2715 -0.7578 -0.2344 -0.7930 -0.1943 -0.8086
+M0 C89 67.0 -1.4453 0.2734 -0.9180 -0.1807 -0.6445 -0.4414 -0.3789 -0.7109 -0.5234 -0.5898 -0.5859 -0.4844 -0.6016 -0.4648 -0.5859 -0.4746
+M0 C90 66.9 0.5039 -1.6016 0.1582 -1.2031 0.1426 -1.1719 0.0160 -1.0312 -0.1387 -0.8828 -0.2656 -0.7383 -0.2051 -0.8047 -0.1689 -0.8164
+M0 C91 66.9 1.4531 1.2500 0.9727 0.7812 0.6094 0.2578 0.2139 -0.1807 -0.2812 -0.4590 -0.4473 -0.5977 -0.4160 -0.5703 -0.3906 -0.4512
+M0 C92 66.9 0.2910 -1.4688 -0.0284 -1.0938 -0.0425 -1.0547 -0.1660 -0.9258 -0.3008 -0.7969 -0.3867 -0.6914 -0.3438 -0.7266 -0.2930 -0.7422
+M0 C93 66.9 -1.5156 0.3828 -0.8828 -0.1201 -0.5898 -0.3320 -0.4551 -0.4980 -0.4844 -0.4805 -0.4707 -0.4570 -0.4902 -0.4395 -0.4648 -0.4199
+M0 C94 67.0 0.9648 1.3438 0.4316 0.7109 0.3457 0.6289 0.2217 0.5469 -0.0903 0.2656 -0.4570 -0.1494 -0.4199 -0.1797 -0.4258 -0.1562
+M0 C95 66.9 1.4297 1.4062 1.0469 1.0156 0.7969 0.6758 0.2930 0.1797 -0.2578 -0.2539 -0.5000 -0.5234 -0.4648 -0.4492 -0.3516 -0.2305
+M0 C96 66.9 0.0679 -1.2500 -0.2490 -0.9023 -0.2734 -0.8594 -0.4258 -0.7031 -0.5352 -0.6133 -0.5508 -0.5703 -0.4746 -0.6367 -0.4023 -0.6641
+M0 C97 66.9 0.9922 -0.7383 0.3203 -1.0000 0.1865 -1.1094 0.1001 -1.0781 -0.1582 -0.8672 -0.3105 -0.7109 -0.3047 -0.6797 -0.2793 -0.6250
+M0 C98 66.9 1.3438 0.5938 0.6289 0.2793 0.2812 -0.2383 0.0405 -0.5586 -0.3242 -0.6406 -0.4785 -0.6172 -0.4707 -0.5820 -0.4551 -0.5117
+M0 C99 66.9 0.1924 -1.3828 -0.1152 -1.0156 -0.1279 -0.9844 -0.2637 -0.8398 -0.3906 -0.7188 -0.4648 -0.6250 -0.4082 -0.6758 -0.3535 -0.6953
+  Avg: 66.93 ms, Total: 6692.84 ms
+Done.
+[234.063064 0:18 starry_kernel::task::ops:448] Task(18, "bench_multi") exit with code: 0
+[234.072777 0:18 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[234.086128 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[234.097384 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[234.110129 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[234.121515 0:19 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[235.147547 0:19 starry_kernel::task::ops:448] Task(19, "busybox") exit with code: 0
+[235.156701 0:19 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[235.166540 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[235.177917 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[235.190656 0:20 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec10
+[235.225920 0:20 starry_kernel::task::ops:448] Task(20, "busybox") exit with code: 0
+[235.235159 0:20 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[235.244956 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[235.256209 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_ffn1600 ===
+[235.270948 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[235.282310 0:21 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_ffn1600.cvimodel ===
+[235.798898 0:21 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[235.810122 0:21 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[235.822032 0:21 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[235.833634 0:21 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[236.006175 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[236.021373 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=7, handle=13, phys_addr=0x89348000, size=72500368
+[236.035280 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x89348000, buffer_size=72500368, requested_length=72503296, map_le6
+[236.051443 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:03:52 bench_multi: version: 1.4.0
+[236.062267 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:03:52 bench_multi: act_ffn1600 Build at 2026-05-29 10:26:17 For platform cv181x
+[236.080327 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x327000, length=72503296
+[278.141341 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[278.151572 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=8, handle=14, phys_addr=0x8d885000, size=835904
+[278.165312 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8d885000, buffer_size=835904, requested_length=839680, map_length0
+[278.181040 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x492d000, length=839680
+[278.241000 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:04:35 bench_multi: Max SharedMem size:1205248
+[278.405517 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[278.415851 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=5, handle=15, phys_addr=0x8d955000, size=1205248
+[278.429609 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8d955000, buffer_size=1205248, requested_length=1208320, map_leng0
+[278.445597 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x49fa000, length=1208320
+[278.468389 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[278.478669 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=9, handle=16, phys_addr=0x8da7c000, size=602112
+[278.492360 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8da7c000, buffer_size=602112, requested_length=602112, map_length2
+[278.508052 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x484c000, length=602112
+[278.519752 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[278.529914 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=10, handle=17, phys_addr=0x80ee5000, size=8
+[278.543387 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x80ee5000, buffer_size=8, requested_length=4096, map_length=4096
+[278.558224 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x1000, length=4096
+[278.597450 0:21 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[278.607641 0:21 starry_kernel::pseudofs::dev::ion::device:96] Allocated Ion buffer: fd=11, handle=18, phys_addr=0x8905c000, size=64
+[278.621152 0:21 starry_kernel::syscall::mm::mmap:249] Ion buffer mmap: phys_addr=0x8905c000, buffer_size=64, requested_length=4096, map_length=4096
+[278.636102 0:21 starry_kernel::syscall::mm::mmap:280] Ion buffer mmap success: vaddr=0x2000, length=4096
+M0 C0 74.3 -1.1797 -0.4395 -0.8789 -0.7930 -0.7383 -0.9648 -0.6172 -1.0938 -0.6289 -1.0469 -0.6172 -1.0234 -0.6094 -0.9844 -0.5781 -0.9180
+M0 C1 74.3 -1.1797 -0.4395 -0.8789 -0.7930 -0.7383 -0.9648 -0.6172 -1.0938 -0.6289 -1.0469 -0.6172 -1.0234 -0.6094 -0.9844 -0.5781 -0.9180
+M0 C2 74.3 -1.1797 -0.4395 -0.8789 -0.7930 -0.7383 -0.9648 -0.6172 -1.0938 -0.6289 -1.0469 -0.6172 -1.0234 -0.6094 -0.9844 -0.5781 -0.9180
+M0 C3 74.3 -1.1797 -0.4395 -0.8789 -0.7930 -0.7383 -0.9648 -0.6172 -1.0938 -0.6289 -1.0469 -0.6172 -1.0234 -0.6094 -0.9844 -0.5781 -0.9180
+M0 C4 74.3 -1.1797 -0.4395 -0.8789 -0.7930 -0.7383 -0.9648 -0.6172 -1.0938 -0.6289 -1.0469 -0.6172 -1.0234 -0.6094 -0.9844 -0.5781 -0.9180
+M0 C5 74.3 0.2031 -1.7031 -0.3320 -1.1875 -0.4648 -1.1094 -0.7148 -0.8867 -0.7344 -0.8477 -0.6602 -0.8828 -0.4668 -1.0703 -0.3477 -1.0625
+M0 C6 74.3 0.2031 -1.7031 -0.3320 -1.1875 -0.4648 -1.1094 -0.7148 -0.8867 -0.7344 -0.8477 -0.6602 -0.8828 -0.4668 -1.0703 -0.3477 -1.0625
+M0 C7 74.3 0.2031 -1.7031 -0.3320 -1.1875 -0.4648 -1.1094 -0.7148 -0.8867 -0.7344 -0.8477 -0.6602 -0.8828 -0.4668 -1.0703 -0.3477 -1.0625
+M0 C8 74.3 0.2031 -1.7031 -0.3320 -1.1875 -0.4648 -1.1094 -0.7148 -0.8867 -0.7344 -0.8477 -0.6602 -0.8828 -0.4668 -1.0703 -0.3477 -1.0625
+M0 C9 74.3 0.2031 -1.7031 -0.3320 -1.1875 -0.4648 -1.1094 -0.7148 -0.8867 -0.7344 -0.8477 -0.6602 -0.8828 -0.4668 -1.0703 -0.3477 -1.0625
+M0 C10 74.3 0.2021 -1.6797 -0.2598 -1.2266 -0.4297 -1.0703 -0.6914 -0.8281 -0.6992 -0.8008 -0.6680 -0.7773 -0.4863 -0.9453 -0.3613 -0.9609
+M0 C11 74.3 0.2695 -1.7500 -0.2031 -1.2656 -0.3770 -1.1016 -0.6719 -0.8320 -0.6836 -0.8047 -0.6641 -0.7852 -0.4805 -0.9492 -0.3555 -0.9609
+M0 C12 74.3 0.2061 -1.6797 -0.2656 -1.2188 -0.4414 -1.0547 -0.6758 -0.8477 -0.7031 -0.7969 -0.6602 -0.7852 -0.4844 -0.9297 -0.3555 -0.9453
+M0 C13 74.3 0.2412 -1.7031 -0.2344 -1.2344 -0.4023 -1.0781 -0.6523 -0.8516 -0.6602 -0.8242 -0.6406 -0.7930 -0.4688 -0.9531 -0.3516 -0.9609
+M0 C14 74.3 0.2412 -1.7031 -0.2295 -1.2266 -0.3887 -1.0703 -0.6484 -0.8398 -0.6484 -0.8242 -0.6289 -0.7891 -0.4648 -0.9414 -0.3359 -0.9688
+M0 C15 74.3 0.2295 -1.6797 -0.2285 -1.2266 -0.4023 -1.0625 -0.6289 -0.8594 -0.6641 -0.8008 -0.6484 -0.7773 -0.4688 -0.9336 -0.3496 -0.9375
+M0 C16 74.3 0.2441 -1.7031 -0.2129 -1.2422 -0.3691 -1.0938 -0.6523 -0.8398 -0.6758 -0.7930 -0.6523 -0.7812 -0.4863 -0.9258 -0.3516 -0.9492
+M0 C17 74.3 0.2773 -1.7578 -0.2012 -1.2734 -0.3730 -1.1094 -0.6641 -0.8516 -0.6758 -0.8125 -0.6445 -0.7930 -0.4688 -0.9609 -0.3496 -0.9727
+M0 C18 74.3 0.1924 -1.6562 -0.2441 -1.2188 -0.4023 -1.0781 -0.6484 -0.8594 -0.6953 -0.7891 -0.6719 -0.7578 -0.4922 -0.9180 -0.3730 -0.9141
+M0 C19 74.3 0.2490 -1.7109 -0.2070 -1.2656 -0.3691 -1.1094 -0.6406 -0.8633 -0.6602 -0.8203 -0.6445 -0.7969 -0.4668 -0.9570 -0.3477 -0.9688
+M0 C20 74.3 -0.5547 -0.7852 -0.5742 -0.7930 -0.5820 -0.7695 -0.5859 -0.7812 -0.5898 -0.7656 -0.5586 -0.7422 -0.5078 -0.7266 -0.4238 -0.6680
+M0 C21 74.3 -0.9844 -0.5312 -0.8438 -0.7227 -0.7188 -0.8711 -0.6797 -0.9375 -0.6875 -0.8984 -0.6758 -0.8633 -0.6211 -0.8359 -0.5430 -0.7852
+M0 C22 74.3 1.7891 1.5156 1.6953 1.4766 1.6328 1.4375 1.4688 1.2812 0.9844 0.9102 0.3242 0.3730 -0.0396 0.0259 -0.3047 -0.0077
+M0 C23 74.3 -2.0469 0.5742 -1.0625 -0.4219 -0.6992 -0.8008 -0.5117 -0.9961 -0.4824 -1.0000 -0.4512 -1.0078 -0.4492 -0.9844 -0.4531 -0.8789
+M0 C24 74.3 -0.3418 -1.0312 -0.4805 -0.9375 -0.5352 -0.9023 -0.5977 -0.8594 -0.6250 -0.8125 -0.5938 -0.7969 -0.5430 -0.7812 -0.4414 -0.7383
+M0 C25 74.3 -0.8281 -0.6953 -0.7695 -0.7891 -0.6992 -0.8672 -0.6680 -0.9180 -0.6836 -0.8867 -0.6641 -0.8633 -0.6133 -0.8516 -0.5312 -0.8008
+M0 C26 74.3 1.5312 1.4062 1.3906 1.2578 1.0547 1.0000 0.8867 0.8086 0.0289 0.0771 -0.2471 -0.1768 -0.4277 -0.3770 -0.4824 -0.3496
+M0 C27 74.3 1.6875 1.3984 1.5703 1.3750 1.4688 1.2969 1.2656 1.1016 0.6641 0.6172 0.0119 0.0840 -0.2773 -0.2422 -0.4766 -0.2148
+M0 C28 74.3 -0.4746 -0.9141 -0.5469 -0.8906 -0.5703 -0.8750 -0.6172 -0.8555 -0.6445 -0.8125 -0.6172 -0.7812 -0.5586 -0.7852 -0.4648 -0.7461
+M0 C29 74.3 -1.3828 0.0474 -0.8203 -0.4277 -0.5898 -0.6445 -0.4297 -0.7891 -0.4316 -0.7969 -0.4375 -0.7695 -0.4102 -0.7383 -0.3828 -0.6992
+M0 C30 74.3 -0.5469 -0.7656 -0.5703 -0.7812 -0.5781 -0.7734 -0.5703 -0.7930 -0.5859 -0.7695 -0.5586 -0.7461 -0.5039 -0.7383 -0.4199 -0.6758
+M0 C31 74.3 -1.1328 -0.4492 -0.9414 -0.6758 -0.8008 -0.8359 -0.6992 -0.9453 -0.7266 -0.9141 -0.7109 -0.8828 -0.6641 -0.8750 -0.5898 -0.8398
+M0 C32 74.3 -0.4219 -0.7852 -0.4707 -0.7773 -0.4883 -0.7461 -0.5156 -0.7422 -0.5352 -0.7070 -0.5039 -0.6797 -0.4434 -0.6680 -0.3477 -0.6133
+M0 C33 74.3 -0.1963 -1.0000 -0.3672 -0.8672 -0.4082 -0.8320 -0.4688 -0.8047 -0.5156 -0.7539 -0.4941 -0.7266 -0.4473 -0.7109 -0.3418 -0.6758
+M0 C34 74.3 -0.4688 -0.9688 -0.5859 -0.9023 -0.6406 -0.8594 -0.6875 -0.8320 -0.7109 -0.8047 -0.6797 -0.7734 -0.6211 -0.7734 -0.5234 -0.7500
+M0 C35 74.3 1.6094 1.1875 1.4531 1.1719 1.3438 1.0938 1.0234 0.8008 0.3867 0.2754 -0.1240 -0.1602 -0.2715 -0.3906 -0.3340 -0.3633
+M0 C36 74.3 0.3691 -1.8125 -0.1289 -1.3203 -0.2852 -1.1797 -0.5703 -0.9023 -0.6445 -0.7930 -0.6289 -0.7617 -0.4453 -0.9297 -0.3145 -0.9688
+M0 C37 74.3 -0.5781 -0.7852 -0.6172 -0.7734 -0.6289 -0.7500 -0.6328 -0.7578 -0.6328 -0.7539 -0.5977 -0.7383 -0.5430 -0.7227 -0.4590 -0.6680
+M0 C38 74.3 -0.1338 -1.3672 -0.4297 -1.0859 -0.5195 -1.0078 -0.6836 -0.8672 -0.7227 -0.8125 -0.6836 -0.8047 -0.5820 -0.8672 -0.4473 -0.8906
+M0 C39 74.3 -2.0469 0.5156 -1.1719 -0.3691 -0.8125 -0.7422 -0.5977 -0.9727 -0.5586 -0.9805 -0.5156 -0.9883 -0.5547 -0.9414 -0.5742 -0.8320
+M0 C40 74.3 -2.0781 0.6055 -1.1250 -0.3457 -0.7852 -0.7305 -0.5586 -0.9805 -0.5234 -0.9688 -0.4824 -0.9570 -0.4980 -0.9219 -0.4902 -0.8359
+M0 C41 74.3 -1.0391 0.1875 -0.6484 -0.1914 -0.4141 -0.3008 -0.3398 -0.4609 -0.3750 -0.4922 -0.3711 -0.5156 -0.3730 -0.4883 -0.3867 -0.4512
+M0 C42 74.3 1.5625 1.5547 1.3750 1.3359 1.0703 1.0859 0.6875 0.6914 0.0354 0.1592 -0.2637 -0.0679 -0.5430 -0.2852 -0.7305 -0.2119
+M0 C43 74.3 0.4336 -1.1484 -0.0245 -0.7578 -0.1445 -0.6562 -0.2070 -0.5586 -0.3516 -0.5430 -0.3711 -0.5898 -0.3516 -0.6016 -0.2402 -0.6016
+M0 C44 74.3 -0.8867 0.0593 -0.3535 -0.2109 -0.0630 -0.1079 -0.0825 -0.2676 -0.2217 -0.5117 -0.2656 -0.5820 -0.2949 -0.5586 -0.2617 -0.4551
+M0 C45 74.3 -1.9922 0.4395 -1.1250 -0.4219 -0.7891 -0.7930 -0.5664 -1.0156 -0.5430 -1.0078 -0.5352 -1.0000 -0.5312 -0.9609 -0.5391 -0.8711
+M0 C46 74.3 -0.6602 -0.7422 -0.6523 -0.7852 -0.6250 -0.8203 -0.6211 -0.8594 -0.6211 -0.8359 -0.5977 -0.8086 -0.5430 -0.7969 -0.4629 -0.7383
+M0 C47 74.3 0.4336 -1.8672 -0.1011 -1.3203 -0.3047 -1.1172 -0.6484 -0.8047 -0.6484 -0.7734 -0.6289 -0.7773 -0.4531 -0.9453 -0.3242 -0.9688
+M0 C48 74.3 -1.9531 0.4316 -1.1172 -0.4355 -0.8008 -0.7930 -0.5703 -1.0000 -0.5430 -1.0156 -0.5312 -1.0156 -0.5312 -0.9883 -0.5391 -0.8750
+M0 C49 74.3 -0.5820 -0.7852 -0.6172 -0.8047 -0.6172 -0.8008 -0.6250 -0.8164 -0.6367 -0.7969 -0.6055 -0.7656 -0.5469 -0.7539 -0.4648 -0.7031
+M0 C50 74.3 1.6094 1.9375 0.8086 0.8984 0.4375 0.2754 -0.1582 -0.5781 -0.4336 -0.4980 -0.6445 -0.4434 -0.6523 -0.3301 -0.8516 -0.0635
+M0 C51 74.3 -2.1250 0.6172 -1.1250 -0.4727 -0.7539 -0.8555 -0.5234 -1.1016 -0.4980 -1.0859 -0.4551 -1.0938 -0.5117 -0.9961 -0.5039 -0.9180
+M0 C52 74.3 -0.6719 -0.8555 -0.6836 -0.8828 -0.6953 -0.8711 -0.7188 -0.8633 -0.7266 -0.8516 -0.6914 -0.8320 -0.6406 -0.8359 -0.5586 -0.7969
+M0 C53 74.3 -1.3828 -0.2656 -0.9766 -0.7500 -0.7773 -0.9961 -0.5898 -1.1719 -0.6211 -1.1172 -0.6055 -1.1016 -0.6055 -1.0625 -0.5781 -1.0000
+M0 C54 74.3 -2.2031 0.7109 -1.2344 -0.3398 -0.8242 -0.7578 -0.5547 -1.0625 -0.5352 -1.0312 -0.4668 -1.0547 -0.5547 -0.9180 -0.5469 -0.8320
+M0 C55 74.3 -1.2344 -0.1040 -0.8438 -0.5977 -0.6953 -0.7500 -0.6094 -0.8594 -0.6016 -0.8633 -0.6016 -0.8438 -0.5508 -0.8477 -0.5117 -0.7422
+M0 C56 74.3 -2.1562 0.6602 -1.1797 -0.4141 -0.8008 -0.8398 -0.5508 -1.0781 -0.5156 -1.0781 -0.5078 -1.0703 -0.5195 -1.0156 -0.5039 -0.9492
+M0 C57 74.3 -2.1250 0.5977 -1.1953 -0.4238 -0.8281 -0.8438 -0.5586 -1.1016 -0.5352 -1.0938 -0.5430 -1.0547 -0.5625 -0.9922 -0.5547 -0.9258
+M0 C58 74.3 1.1875 1.8984 0.2227 0.3906 -0.1631 -0.1836 -0.4766 -0.5781 -0.5586 -0.5820 -0.7031 -0.5742 -0.6797 -0.5312 -0.7891 -0.3887
+M0 C59 74.3 -2.1094 0.5820 -1.1797 -0.4453 -0.8438 -0.8438 -0.5742 -1.0938 -0.5547 -1.0859 -0.5508 -1.0547 -0.5703 -0.9883 -0.5430 -0.9297
+M0 C60 74.3 -1.0547 0.3594 -0.6875 -0.4004 -0.5469 -0.5508 -0.5898 -0.6602 -0.5820 -0.7305 -0.5977 -0.7617 -0.5312 -0.7852 -0.5312 -0.6797
+M0 C61 74.3 0.1895 -1.6953 -0.2539 -1.2656 -0.3516 -1.2109 -0.5781 -1.0078 -0.6406 -0.9141 -0.5820 -0.9336 -0.4277 -1.0469 -0.2969 -1.0781
+M0 C62 74.3 -2.1875 0.7031 -1.2109 -0.3633 -0.8242 -0.7852 -0.5547 -1.0703 -0.5391 -1.0469 -0.5117 -1.0312 -0.5469 -0.9453 -0.5312 -0.8867
+M0 C63 74.3 1.6562 1.9062 1.0000 1.0859 0.7305 0.6406 -0.1069 -0.3887 -0.4590 -0.3848 -0.7227 -0.3184 -0.7500 -0.1367 -0.9297 0.3066
+M0 C64 74.3 1.1484 1.8750 0.1016 0.3594 -0.2637 -0.2061 -0.5117 -0.5352 -0.5820 -0.5469 -0.7109 -0.5508 -0.6914 -0.5156 -0.8047 -0.3711
+M0 C65 74.3 1.2188 1.9297 0.2852 0.4785 -0.0796 -0.1416 -0.4316 -0.5820 -0.5469 -0.5859 -0.6992 -0.5625 -0.7031 -0.5117 -0.8359 -0.3418
+M0 C66 74.3 1.6641 1.6484 1.3359 1.3125 1.2109 0.8711 0.8594 0.3867 0.0537 -0.1299 -0.4746 -0.4785 -0.3965 -0.3379 -0.4258 -0.0330
+M0 C67 74.3 -1.6094 -0.0128 -1.0391 -0.6641 -0.8008 -0.9609 -0.5898 -1.1641 -0.5898 -1.1250 -0.5859 -1.1016 -0.5938 -1.0625 -0.5625 -1.0078
+M0 C68 74.3 -0.6211 -0.9062 -0.6406 -0.9258 -0.6562 -0.9141 -0.6953 -0.9062 -0.6992 -0.8789 -0.6719 -0.8633 -0.6133 -0.8711 -0.5234 -0.8477
+M0 C69 74.3 -1.3984 -0.1016 -0.9141 -0.6250 -0.7500 -0.8203 -0.6055 -0.9570 -0.6055 -0.9297 -0.5977 -0.9180 -0.5586 -0.9102 -0.5195 -0.8359
+M0 C70 74.3 -2.1562 0.6953 -1.1172 -0.3242 -0.7227 -0.7305 -0.5195 -0.9570 -0.4785 -0.9531 -0.4316 -0.9648 -0.4531 -0.9180 -0.4453 -0.8359
+M0 C71 74.3 -0.4316 -0.9688 -0.5234 -0.9180 -0.5742 -0.8711 -0.6172 -0.8477 -0.6367 -0.8164 -0.6094 -0.7930 -0.5586 -0.7852 -0.4648 -0.7422
+M0 C72 74.3 0.4141 -1.7656 -0.0327 -1.2969 -0.1855 -1.1406 -0.4160 -0.9219 -0.5859 -0.7305 -0.5820 -0.7070 -0.4121 -0.8594 -0.2793 -0.9102
+M0 C73 74.3 0.3438 -1.7891 -0.1084 -1.3203 -0.2832 -1.1641 -0.5898 -0.8828 -0.6367 -0.8047 -0.5898 -0.8008 -0.4707 -0.8789 -0.3125 -0.9453
+M0 C74 74.3 0.2871 -1.7344 -0.1553 -1.2891 -0.2930 -1.1641 -0.5391 -0.9180 -0.6328 -0.8086 -0.6055 -0.7734 -0.4531 -0.9062 -0.3281 -0.9336
+M0 C75 74.3 0.1855 -1.6719 -0.2412 -1.2500 -0.3770 -1.1250 -0.6406 -0.8867 -0.6836 -0.8125 -0.6367 -0.8008 -0.4922 -0.9141 -0.3613 -0.9258
+M0 C76 74.3 -2.0312 0.5391 -1.0938 -0.3965 -0.7422 -0.7734 -0.5234 -1.0156 -0.4883 -1.0234 -0.4375 -1.0156 -0.4590 -0.9688 -0.4570 -0.8750
+M0 C77 74.3 -0.9023 -0.6602 -0.8750 -0.7227 -0.8008 -0.8047 -0.7617 -0.8555 -0.7812 -0.8320 -0.7539 -0.8008 -0.7031 -0.8086 -0.6211 -0.7656
+M0 C78 74.3 -0.5781 -0.8008 -0.6172 -0.8125 -0.6289 -0.7812 -0.6367 -0.7930 -0.6445 -0.7773 -0.6172 -0.7539 -0.5625 -0.7461 -0.4766 -0.6914
+M0 C79 74.3 1.7500 1.2578 1.5938 1.2969 1.4688 1.2266 1.2812 0.9062 0.3965 0.2461 -0.2383 -0.0430 -0.5156 -0.3516 -0.6133 -0.2002
+M0 C80 74.3 1.2109 0.0522 0.6953 0.2148 0.4727 0.1152 0.3574 -0.1064 -0.1797 -0.3418 -0.4316 -0.4180 -0.4277 -0.5078 -0.4590 -0.4062
+M0 C81 74.3 -1.5312 -0.0806 -1.0781 -0.5586 -0.8672 -0.8086 -0.6523 -1.0078 -0.6602 -1.0000 -0.6523 -0.9609 -0.6328 -0.9531 -0.5938 -0.8945
+M0 C82 74.3 -0.3652 0.7148 0.4648 0.7227 0.6992 0.7891 0.4141 0.4766 -0.1328 -0.1787 -0.3359 -0.4082 -0.3984 -0.4219 -0.4629 -0.3750
+M0 C83 74.3 -1.9141 0.4805 -1.0234 -0.4121 -0.6914 -0.7617 -0.4922 -0.9688 -0.4648 -0.9648 -0.4297 -0.9727 -0.4375 -0.9336 -0.4414 -0.8398
+M0 C84 74.3 -0.5312 -0.7891 -0.5664 -0.7930 -0.5703 -0.7617 -0.5781 -0.7773 -0.5898 -0.7617 -0.5586 -0.7422 -0.5117 -0.7305 -0.4238 -0.6797
+M0 C85 74.3 1.6953 1.6562 1.4375 1.3672 1.2812 0.9180 0.9766 0.4492 0.0850 -0.0752 -0.5078 -0.4395 -0.3301 -0.1455 -0.3555 0.1328
+M0 C86 74.3 1.5000 2.0469 0.4082 0.8164 0.0223 0.1699 -0.4590 -0.4668 -0.6484 -0.4160 -0.8555 -0.3281 -0.8867 -0.2080 -1.1719 0.0571
+M0 C87 74.3 1.4688 0.9492 0.6562 0.2852 0.3262 -0.1797 -0.0811 -0.7969 -0.3574 -0.6992 -0.6172 -0.6719 -0.6523 -0.5859 -0.6914 -0.4414
+M0 C88 74.3 0.1172 -1.6406 -0.3184 -1.2344 -0.4180 -1.1797 -0.6172 -0.9961 -0.6875 -0.9023 -0.6328 -0.9180 -0.4980 -1.0078 -0.3652 -1.0234
+M0 C89 74.3 -1.6328 -0.0330 -1.1406 -0.5898 -0.9141 -0.8672 -0.6875 -1.0859 -0.6953 -1.0625 -0.7188 -1.0078 -0.7148 -0.9609 -0.6797 -0.9180
+M0 C90 74.3 0.2539 -1.6953 -0.2432 -1.2578 -0.3594 -1.1875 -0.5898 -0.9844 -0.6641 -0.8867 -0.6211 -0.9062 -0.4609 -1.0234 -0.3301 -1.0391
+M0 C91 74.3 1.6797 1.5312 1.1953 1.1250 1.0469 0.6641 0.5430 -0.0728 -0.0574 -0.3223 -0.5039 -0.5508 -0.4531 -0.3770 -0.5312 -0.1777
+M0 C92 74.3 -0.1895 -1.4219 -0.5312 -1.0938 -0.5938 -1.0547 -0.7227 -0.9375 -0.7578 -0.8828 -0.6797 -0.9102 -0.5664 -0.9805 -0.4395 -0.9922
+M0 C93 74.3 -1.8672 0.2734 -1.1484 -0.4844 -0.8672 -0.7930 -0.6406 -1.0078 -0.6289 -0.9766 -0.6133 -0.9727 -0.6406 -0.9141 -0.6016 -0.8516
+M0 C94 74.3 1.2734 2.0000 0.1963 0.7188 -0.1504 0.1641 -0.5625 -0.3281 -0.6680 -0.4082 -0.7930 -0.4160 -0.8008 -0.3379 -1.0781 -0.0952
+M0 C95 74.3 1.7266 1.6953 1.4609 1.4688 1.2344 1.0859 0.9727 0.6641 0.0396 -0.0540 -0.6328 -0.3809 -0.4316 0.0077 -0.5547 0.1147
+M0 C96 74.3 -0.5469 -1.0625 -0.7031 -0.9336 -0.7305 -0.9258 -0.7930 -0.8711 -0.7969 -0.8555 -0.7422 -0.8594 -0.6523 -0.9141 -0.5547 -0.9062
+M0 C97 74.3 0.8555 -1.0938 0.0688 -1.1797 -0.1045 -1.1562 -0.3184 -1.0469 -0.5039 -0.8984 -0.6289 -0.8203 -0.5195 -0.8438 -0.4219 -0.7891
+M0 C98 74.3 1.4141 0.6992 0.4316 0.0300 0.1172 -0.4219 -0.1729 -0.7773 -0.3984 -0.7305 -0.6523 -0.6797 -0.7148 -0.5781 -0.7383 -0.4512
+M0 C99 74.3 -0.3633 -1.2422 -0.6055 -1.0156 -0.6484 -0.9961 -0.7383 -0.9219 -0.7539 -0.8906 -0.6914 -0.9023 -0.5898 -0.9688 -0.4746 -0.9648
+  Avg: 74.28 ms, Total: 7428.39 ms
+Done.
+[336.258027 0:21 starry_kernel::task::ops:448] Task(21, "bench_multi") exit with code: 0
+[336.267741 0:21 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[336.281385 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[336.292641 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[336.305408 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[336.316682 0:22 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[337.341364 0:22 starry_kernel::task::ops:448] Task(22, "busybox") exit with code: 0
+[337.350520 0:22 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[337.360373 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[337.371634 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[337.384609 0:23 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec10
+[337.419920 0:23 starry_kernel::task::ops:448] Task(23, "busybox") exit with code: 0
+[337.429158 0:23 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[337.438936 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[337.450189 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc2 ===
+[337.464667 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[337.476021 0:24 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc2.cvimodel ===
+[337.971140 0:24 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[337.982363 0:24 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[337.994306 0:24 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[338.005835 0:24 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[338.172782 0:24 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion d[338.194371 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:35 bench_multi: version: 1.4.0
+[338.205201 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:35 bench_multi: act_E2D4 Build at 2026-05-29 10:08:41 For platform cv181x
+[338.219886 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[338.233684 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: reopen ion dev
+ev success
+[338.245883 0:24 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[338.263733 0:24 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yyda/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_r[338s
+aw(bmctx_t, size_t): Assertion `0' failed.
+[338.310307 0:24 starry_kernel::task::signal:268] Send signal SIGABRT to thread 24
+[338.319244 0:24 starry_kernel::task::ops:448] Task(24, "bench_multi") exit with code: 134
+[338.329013 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[338.342786 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: reopen ion dev
+[338.353625 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: reopen ion dev success
+[338.365183 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: ion alloc failed, size = 81410192, ret=ffffffff
+[338.378981 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: reopen ion dev
+[338.527113 0:24 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[338.537704 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[338.551144 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[338.562980 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:35 bench_multi: reopen ion dev success
+[338.574425 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:05:35 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[338.595122 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[338.606381 0:25 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[339.624232 0:25 starry_kernel::task::ops:448] Task(25, "busybox") exit with code: 0
+[339.633386 0:25 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[339.643229 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[339.654490 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[339.667457 0:26 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec10
+[339.691819 0:26 starry_kernel::task::ops:448] Task(26, "busybox") exit with code: 0
+[339.701059 0:26 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[339.710875 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[339.722128 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_enc3 ===
+[339.736735 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[339.747992 0:27 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+Cases: 100, Models: 1
+
+=== Model: /tpu/models/act_enc3.cvimodel ===
+[340.244187 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[340.255402 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[340.267343 0:27 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[340.278874 0:27 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[340.447517 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion [340.467369 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:37 bench_multi: version: 1.4.0
+[340.478212 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:37 bench_multi: act_E3D4 Build at 2026-05-29 10:08:18 For platform cv181x
+[340.492884 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: ion alloc failed, size = 90088080, ret=ffffffff
+dev
+reopen ion dev success
+[340.509749 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[340.527608 0:27 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yy[340.547365 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev
+[340.558186 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev success
+[340.569741 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: ion alloc failed, size = 90088080, ret=ffffffff
+[340.583539 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev
+[340.594381 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev success
+da/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(bmctx_t, size_t): Asse.
+[340.621215 0:27 starry_kernel::task::signal:268] Send signal SIGABRT to thread 27
+[340.630156 0:27 starry_kernel::task::ops:448] Task(27, "bench_multi") exit with code: 134
+[340.639932 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: ion alloc failed, size = 90088080, ret=ffffffff
+[340.653703 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev
+[340.664538 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:37 bench_multi: reopen ion dev success
+[340.676097 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:05:37 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[340.853857 0:27 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[340.864429 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[340.877818 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[340.890569 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[340.901925 0:28 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[341.923994 0:28 starry_kernel::task::ops:448] Task(28, "busybox") exit with code: 0
+[341.933147 0:28 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[341.942984 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[341.954238 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[341.967192 0:29 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffec10
+[341.991376 0:29 starry_kernel::task::ops:448] Task(29, "busybox") exit with code: 0
+[342.000615 0:29 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[342.010422 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[342.021675 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+=== act_model ===
+[342.036262 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[342.047519 0:30 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3ffffefe0
+Cases: 100, Models: 1
+
+=== Model: /tpu/act_model.cvimodel ===
+[342.538616 0:30 starry_kernel::pseudofs::dev::ion::device:217] Added heap 0: type=0, heap_id=0, name=system
+[342.549839 0:30 starry_kernel::pseudofs::dev::ion::device:217] Added heap 1: type=1, heap_id=1, name=dma_coherent
+[342.561750 0:30 starry_kernel::pseudofs::dev::ion::device:217] Added heap 2: type=2, heap_id=2, name=carveout
+[342.573351 0:30 starry_kernel::pseudofs::dev::ion::device:230] Heap query completed: 3 heaps available, 3 requested
+[342.746545 0:30 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[342.769405 0:30 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+[342.779581 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:39 bench_multi: version: 1.4.0
+[342.790413 0:5 starry_kernel::pseudofs::dev::log:19] <182>Jan  1 00:05:39 bench_multi: act_model_det Build at 2026-05-27 20:45:02 For platform cv181x
+[342.805546 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: ion alloc failed, size = 98765968, ret=ffffffff
+[342.819343 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev
+[342.830198 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev success
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+[342.849441 0:30 sg2002_tpu::ion::heap:55] Carveout heap not implemented, using DMA heap instead
+ion ioctl fail:: Cannot allocate memory
+reopen ion dev
+reopen ion dev success
+bench_multi: /home/yyda/workspace/tgoskits/tpu_sdk/cviruntime/src/soc/common/cvi_device_mem.cpp:451: virtual bm_memory* CviDeviceMem::mem_alloc_raw(b.
+[342.884441 0:30 starry_kernel::task::signal:268] Send signal SIGABRT to thread 30
+[342.893395 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: ion alloc failed, size = 98765968, ret=ffffffff
+[342.907173 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev
+[342.918011 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev success
+[342.929570 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: ion alloc failed, size = 98765968, ret=ffffffff
+[342.943380 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev
+[342.954258 0:30 starry_kernel::task::ops:448] Task(30, "bench_multi") exit with code: 134
+[342.964005 0:5 starry_kernel::pseudofs::dev::log:19] <180>Jan  1 00:05:39 bench_multi: reopen ion dev success
+[342.975538 0:5 starry_kernel::pseudofs::dev::log:19] <179>Jan  1 00:05:39 bench_multi: alloc ion failed ERROR in /home/yyda/workspace/tgoskits/tpu_s1
+[343.132434 0:30 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[343.143039 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+Aborted (core dumped)
+[343.156437 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+[343.169196 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[343.180567 0:31 starry_kernel::task::user:23] Enter user space: ip=0x6013d7ae, sp=0x3fffff1a0
+[344.202569 0:31 starry_kernel::task::ops:448] Task(31, "busybox") exit with code: 0
+[344.211723 0:31 starry_kernel::task::signal:318] Send signal SIGCHLD to process 13
+[344.221564 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(0x0)
+[344.232938 0:13 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG)
+All done.
+[344.245711 0:13 starry_kernel::task::ops:448] Task(13, "busybox") exit with code: 0
+[344.385454 0:13 starry_kernel::task::signal:318] Send signal SIGCHLD to process 7
+[344.395210 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WUNTRACED)
+[344.406914 0:7 starry_kernel::syscall::task::wait:72] sys_waitpid <= pid: -1, options: WaitPidOptions(WNOHANG | WUNTRACED)
+root@starry:/root #
