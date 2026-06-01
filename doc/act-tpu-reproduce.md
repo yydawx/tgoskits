@@ -203,13 +203,41 @@ riscv64-linux-gnu-g++ -static -O2 -march=rv64gc -mabi=lp64d \
 
 ### 5.1 获取 fip.bin 和 ramdisk
 
-从已知可用的 SG2002 镜像提取（不随内核变化）：
+fip.bin 和 ramdisk 是 Cvitek 平台固化的 bootloader 组件，不随 StarryOS 内核变化，只需获取一次。
+
+**方法 A：从 Sipeed 官方镜像提取（推荐）**
+
+下载 LicheeRV Nano 的官方 Linux 镜像，提取 boot 分区中的文件：
 
 ```bash
-dd if=work.img bs=512 skip=2048 count=131072 of=boot_part.img
+# 下载官方镜像（以最新 release 为准）
+wget https://github.com/sipeed/LicheeRV-Nano-Build/releases/download/xxx/sd.img.xz
+xz -d sd.img.xz
+
+# 提取 boot 分区（FAT32，位于扇区 2048）
+dd if=sd.img bs=512 skip=2048 count=131072 of=boot_part.img
+
+# 提取 fip.bin 和 boot.sd
 mcopy -i boot_part.img ::/fip.bin .
-# ramdisk 提取见附录
+mcopy -i boot_part.img ::/boot.sd boot_sd_linux.bin
+
+# 从 boot.sd 中提取 ramdisk（FIT image 解析，见附录）
+python3 extract_ramdisk.py boot_sd_linux.bin
+# → cvitek-ramdisk.gz
 ```
+
+**方法 B：从 LicheeRV-Nano-Build 编译**
+
+```bash
+cd LicheeRV-Nano-Build
+source build/envsetup_soc.sh
+defconfig sg2002_licheervnano_sd
+make all
+# → install/soc_sg2002_licheervnano_sd/fip.bin
+# → install/soc_sg2002_licheervnano_sd/rawimages/boot.sd
+```
+
+> 需要 RISC-V 交叉编译工具链（`riscv64-unknown-linux-musl-`）。编译时间较长。
 
 ### 5.2 准备 Rootfs
 
