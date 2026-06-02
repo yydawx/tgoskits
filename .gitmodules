@@ -1,0 +1,3 @@
+[submodule "external/sg200x-bsp"]
+	path = external/sg200x-bsp
+	url = git@github.com:yydawx/sg200x-bsp.git
