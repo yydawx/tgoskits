@@ -16,6 +16,7 @@ mod r#loop;
 pub use r#loop::LoopDevice;
 #[cfg(feature = "sg2002")]
 pub mod ion;
+mod gpio;
 #[cfg(feature = "memtrack")]
 mod memtrack;
 #[cfg(all(feature = "rknpu", not(any(windows, unix))))]
@@ -370,6 +371,8 @@ fn builder(fs: Arc<SimpleFs>) -> DirMaker {
         );
     }
     root.add("dri", SimpleDir::new_maker(fs.clone(), Arc::new(dri_dir)));
+
+    root.add("gpio", gpio::gpio_dir_maker(fs.clone()));
 
     // Loop devices (major 7, minor = device index)
     for i in 0..16 {
