@@ -1,0 +1,13 @@
+__pycache__/
+.idea/
+checkpoints/
+proj57_database&model/
+output/
+.ipynb_checkpoints/
+tpu_artifacts/
+calib_data/
+*.npz
+*.mlir
+*.prototxt
+*.csv
+*.json
