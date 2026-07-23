@@ -167,6 +167,9 @@ impl Starry {
             QuickStartCommand::LicheervNanoSg2002(args) => match args.action {
                 QuickSg2002Action::Build => self.quick_start_sg2002_build().await,
                 QuickSg2002Action::Run(run_args) => self.quick_start_sg2002_run(run_args).await,
+                QuickSg2002Action::Image(img_args) => {
+                    self.quick_start_sg2002_image(img_args).await
+                }
             },
         }
     }
@@ -633,6 +636,107 @@ impl Starry {
         self.run_build_request(request).await
     }
 
+    async fn quick_start_sg2002_image(
+        &mut self,
+        args: quick_start::QuickSg2002ImageArgs,
+    ) -> anyhow::Result<()> {
+        use std::io::Write;
+        use std::process::Command;
+
+        let ws = self.app.workspace_root().to_path_buf();
+
+        self.quick_start_sg2002_build().await?;
+
+        let rootfs = match &args.rootfs {
+            Some(p) => p.clone(),
+            None => {
+                self.rootfs(rootfs::ArgsRootfs { arch: Some("riscv64".into()) })
+                    .await?;
+                let rfs_path = ws.join("tmp/axbuild/rootfs/rootfs-riscv64-alpine.img/rootfs-riscv64-alpine.img");
+                if !rfs_path.exists() {
+                    anyhow::bail!("rootfs not found at {}", rfs_path.display());
+                }
+                rfs_path
+            }
+        };
+
+        let fip = match &args.fip {
+            Some(p) => p.clone(),
+            None => {
+                if let Ok(env_fip) = std::env::var("FIP") {
+                    PathBuf::from(env_fip)
+                } else {
+                    let p = ws.join("fip.bin");
+                    if !p.exists() {
+                        anyhow::bail!("fip.bin not found. Use --fip or set FIP env var.");
+                    }
+                    p
+                }
+            }
+        };
+
+        let out = args.output.unwrap_or_else(|| ws.join("sg2002_sd.img"));
+        let bootsd = ws.join("target/riscv64gc-unknown-none-elf/release/boot.sd");
+
+        if !bootsd.exists() {
+            anyhow::bail!("boot.sd not found at {}", bootsd.display());
+        }
+        if !rootfs.exists() {
+            anyhow::bail!("rootfs not found at {}", rootfs.display());
+        }
+        if !fip.exists() {
+            anyhow::bail!("fip.bin not found at {}", fip.display());
+        }
+
+        let rootfs_bytes = std::fs::metadata(&rootfs)?.len();
+        let rootfs_sectors = (rootfs_bytes / 512) + 2048;
+        let total_sectors: u64 = 2048 + 131072 + 2048 + rootfs_sectors;
+
+        run_cmd(Command::new("dd")
+            .arg("if=/dev/zero")
+            .arg(format!("of={}", out.display()))
+            .args(["bs=512", "count=0", &format!("seek={}", total_sectors)]))?;
+
+        let mut sfdisk = Command::new("sfdisk")
+            .arg(&out)
+            .stdin(std::process::Stdio::piped())
+            .spawn()?;
+        {
+            let stdin = sfdisk.stdin.as_mut().unwrap();
+            writeln!(stdin, "label: dos")?;
+            writeln!(stdin, "unit: sectors")?;
+            writeln!(stdin, "start=2048, size=131072, type=c, bootable")?;
+            writeln!(stdin, "start=133120, type=83")?;
+        }
+        let sfdisk_status = sfdisk.wait()?;
+        if !sfdisk_status.success() {
+            anyhow::bail!("sfdisk failed");
+        }
+
+        let boot_offset = 2048u64 * 512;
+        run_cmd(Command::new("mformat")
+            .args(["-v", "BOOT", "-h", "255", "-s", "63", "-t", "8192"])
+            .arg("-i").arg(format!("{}@@{}", out.display(), boot_offset)))?;
+
+        let fat_i = format!("{}@@{}", out.display(), boot_offset);
+        run_cmd(Command::new("mcopy").arg("-i").arg(&fat_i).arg(&fip).arg("::"))?;
+        run_cmd(Command::new("mcopy").arg("-i").arg(&fat_i).arg(&bootsd).arg("::"))?;
+
+        let uenv = ws.join("target/riscv64gc-unknown-none-elf/release/uEnv.txt");
+        std::fs::write(&uenv,
+            "sdbootauto=fatload mmc 0:1 0x81800000 boot.sd && bootm 0x81800000#conf\n")?;
+        run_cmd(Command::new("mcopy").arg("-i").arg(&fat_i).arg(&uenv).arg("::"))?;
+        let _ = std::fs::remove_file(&uenv);
+
+        run_cmd(Command::new("dd")
+            .arg(format!("if={}", rootfs.display()))
+            .arg(format!("of={}", out.display()))
+            .args(["bs=512", "seek=133120", "conv=notrunc", "status=progress"]))?;
+
+        println!("SD card image: {} ({} MiB)", out.display(), total_sectors * 512 / 1024 / 1024);
+        Ok(())
+    }
+
     async fn quick_start_sg2002_run(
         &mut self,
         args: quick_start::QuickSg2002RunArgs,
@@ -655,6 +759,14 @@ impl Starry {
 
 pub(crate) fn default_qemu_config_template_path(workspace_root: &Path, arch: &str) -> PathBuf {
     workspace_root.join(format!("os/StarryOS/configs/qemu/qemu-{arch}.toml"))
+}
+
+fn run_cmd(cmd: &mut std::process::Command) -> anyhow::Result<()> {
+    let status = cmd.status().map_err(|e| anyhow::anyhow!("failed to run {:?}: {e}", cmd))?;
+    if !status.success() {
+        anyhow::bail!("{:?} exited with {}", cmd, status);
+    }
+    Ok(())
 }
 
 fn format_app_run_progress(

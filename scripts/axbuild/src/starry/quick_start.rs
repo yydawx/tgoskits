@@ -91,6 +91,21 @@ pub enum QuickSg2002Action {
     Build,
     /// Build and run StarryOS on a local SG2002 serial console
     Run(QuickSg2002RunArgs),
+    /// Build StarryOS and assemble an SD card image
+    Image(QuickSg2002ImageArgs),
+}
+
+#[derive(Args, Debug, Clone)]
+pub struct QuickSg2002ImageArgs {
+    /// Path to fip.bin (first-stage bootloader)
+    #[arg(long)]
+    pub fip: Option<PathBuf>,
+    /// Path to rootfs image (default: managed Alpine rootfs)
+    #[arg(long)]
+    pub rootfs: Option<PathBuf>,
+    /// Output SD card image path (default: <workspace>/sg2002_sd.img)
+    #[arg(long)]
+    pub output: Option<PathBuf>,
 }
 
 #[derive(Args, Debug, Clone, Default)]

@@ -19,14 +19,24 @@
                 algo = "sha256";
             };
         };
+        fdt {
+            description = "SG2002 device tree";
+            data = /incbin/("${dtb_file}");
+            type = "flat_dt";
+            arch = "riscv";
+            compression = "none";
+
+            hash {
+                algo = "crc32";
+            };
+        };
     };
 
     configurations {
-        default = "config";
-
-        config {
+        conf {
             description = "StarryOS SG2002";
             kernel = "kernel";
+            fdt = "fdt";
         };
     };
 };

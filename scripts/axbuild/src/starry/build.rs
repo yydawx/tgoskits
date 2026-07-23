@@ -338,7 +338,15 @@ fn uimage_generation_plan(
         let rendered_its = temp_file_path(kernel_elf, "uimage.its")
             .expect("kernel ELF path should have a valid parent and filename");
         let kernel_bin = kernel_elf.with_extension("bin");
-        let output_uimg = kernel_bin.with_extension("uimg");
+        let cfg_name = config_path
+            .file_stem()
+            .and_then(|s| s.to_str())
+            .unwrap_or("");
+        let output_uimg = if cfg_name.contains("sg2002") {
+            kernel_elf.with_file_name("boot.sd")
+        } else {
+            kernel_bin.with_extension("uimg")
+        };
         UimageGenerationPlan {
             source_its,
             rendered_its,
@@ -356,11 +364,17 @@ fn generate_uimage_from_its(
     kernel_elf: &Path,
 ) -> anyhow::Result<()> {
     refresh_bin(kernel_elf, &plan.kernel_bin)?;
+    let config_stem = plan.source_its.file_stem().unwrap();
+    let dtb_file = workspace_root
+        .join("os/StarryOS/configs/board")
+        .join(config_stem)
+        .with_extension("dtb");
     render_uimage_its_template(
         &plan.source_its,
         &plan.rendered_its,
         kernel_elf,
         &plan.kernel_bin,
+        &dtb_file,
         arch,
         target,
     )?;
@@ -402,6 +416,7 @@ fn render_uimage_its_template(
     rendered: &Path,
     kernel_elf: &Path,
     kernel_bin: &Path,
+    dtb_file: &Path,
     arch: &str,
     target: &str,
 ) -> anyhow::Result<()> {
@@ -410,6 +425,7 @@ fn render_uimage_its_template(
     let rendered_content = content
         .replace("${kernel_bin}", &kernel_bin.display().to_string())
         .replace("${kernel_elf}", &kernel_elf.display().to_string())
+        .replace("${dtb_file}", &dtb_file.display().to_string())
         .replace("${arch}", arch)
         .replace("${target}", target);
     fs::write(rendered, rendered_content)
